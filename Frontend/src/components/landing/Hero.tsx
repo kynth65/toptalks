@@ -1,14 +1,9 @@
 import React from 'react';
 import Button from '../common/Button';
-import TutorCard from './TutorCard';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const Hero: React.FC = () => {
-  const tutors = [
-    { id: 1, name: 'Sarah', image: '👩', bgColor: 'bg-coral' },
-    { id: 2, name: 'James', image: '👨', bgColor: 'bg-mint' },
-    { id: 3, name: 'Maria', image: '👩', bgColor: 'bg-butter' },
-    { id: 4, name: 'David', image: '👨', bgColor: 'bg-sky' },
-  ];
+  const { t } = useLanguage();
 
   return (
     <section className="relative min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -24,33 +19,39 @@ const Hero: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="space-y-6 animate-fade-in-up">
-            <p className="text-gray text-lg font-medium">Welcome to</p>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight">
-              TopTalks
+              {t.hero.headline}
             </h1>
             <p className="text-xl text-gray max-w-xl">
-              Education Landing Page powered by TheSprkl UI Kit.
+              {t.hero.subheading}
             </p>
-            <p className="text-lg text-gray max-w-xl">
-              Make English learning fun and accessible with our qualified tutors.
-              Build friendships while mastering a new language through interactive
-              games and activities.
-            </p>
-            <div className="pt-4">
-              <Button size="lg">Sign up for a free trial class</Button>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Button size="lg" onClick={() => window.location.href = '/student-services'}>
+                {t.hero.cta_student}
+              </Button>
+              <Button size="lg" variant="outline" onClick={() => window.location.href = '/start-teaching'}>
+                {t.hero.cta_tutor}
+              </Button>
             </div>
+
+            {/* Encouragement Text */}
+            <p className="text-lg text-gray max-w-xl pt-2">
+              {t.hero.encouragement}
+            </p>
           </div>
 
-          {/* Right Column - Tutor Cards Grid */}
-          <div className="grid grid-cols-2 gap-4 sm:gap-6 animate-fade-in-right">
-            {tutors.map((tutor) => (
-              <TutorCard
-                key={tutor.id}
-                image={tutor.image}
-                name={tutor.name}
-                bgColor={tutor.bgColor}
+          {/* Right Column - Teacher Image */}
+          <div className="relative h-[500px] flex justify-center items-center animate-fade-in-right">
+            {/* Teacher Image */}
+            <div className="relative w-full max-w-md">
+              <img
+                src="/images/teacher_wearing_denim.png"
+                alt="Teacher"
+                className="w-full h-auto object-contain drop-shadow-2xl"
               />
-            ))}
+            </div>
           </div>
         </div>
       </div>
