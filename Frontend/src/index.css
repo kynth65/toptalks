@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --color-coral: #F7A8A0;
+  --color-sage: #DCE5A1;
+  --color-butter: #F8F3A6;
+  --color-sky: #C6D6F2;
+  --color-mint: #C7EEEA;
+  --color-cream: #FDFBF8;
+  --color-navy: #1A1D26;
+  --color-gray: #555555;
+
+  --font-family-sans: 'Inter', 'Nunito', ui-sans-serif, system-ui, sans-serif;
+
+  --radius-xl: 1.5rem;
+
+  --animate-blob: blob 7s infinite;
+  --animate-fade-in: fadeIn 0.8s ease-out;
+  --animate-fade-in-up: fadeInUp 0.8s ease-out;
+  --animate-fade-in-right: fadeInRight 0.8s ease-out;
+}
+
+/* Animations */
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animation utility classes */
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s ease-out;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animation-delay-6000 {
+  animation-delay: 6s;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body reset */
+body {
+  margin: 0;
+  padding: 0;
+}
