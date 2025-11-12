@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../components/common/Button';
+import Footer from '../components/common/Footer';
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -146,6 +147,8 @@ const LoginPage: React.FC = () => {
           </p>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };

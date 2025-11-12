@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Button from '../common/Button';
 import { useLanguage } from '../../contexts/LanguageContext';
 
@@ -28,18 +29,41 @@ const Hero: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" onClick={() => window.location.href = '/student-services'}>
-                {t.hero.cta_student}
-              </Button>
-              <Button size="lg" variant="outline" onClick={() => window.location.href = '/start-teaching'}>
-                {t.hero.cta_tutor}
-              </Button>
+              <Link to="/student-services">
+                <Button size="lg">
+                  {t.hero.cta_student}
+                </Button>
+              </Link>
+              <Link to="/start-teaching">
+                <Button size="lg" variant="outline">
+                  {t.hero.cta_tutor}
+                </Button>
+              </Link>
             </div>
 
             {/* Encouragement Text */}
             <p className="text-lg text-gray max-w-xl pt-2">
               {t.hero.encouragement}
             </p>
+
+            {/* Social Proof Badge */}
+            <div className="pt-4 flex items-center gap-4">
+              <div className="flex -space-x-2">
+                {[1, 2, 3, 4].map((i) => (
+                  <div
+                    key={i}
+                    className="w-10 h-10 rounded-full bg-gray-300 border-2 border-cream"
+                  />
+                ))}
+              </div>
+              <div className="text-sm text-gray">
+                <div className="font-semibold">10,000+ Students</div>
+                <div className="flex items-center gap-1">
+                  <span className="text-yellow-500">★★★★★</span>
+                  <span>4.9/5</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Right Column - Teacher Image */}

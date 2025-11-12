@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/common/Navbar';
 import Button from '../components/common/Button';
+import Footer from '../components/common/Footer';
 
 const PricingPage: React.FC = () => {
   const pricingPlans = [
@@ -194,6 +195,8 @@ const PricingPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

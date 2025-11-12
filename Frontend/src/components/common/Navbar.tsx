@@ -1,29 +1,31 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import Button from './Button';
-import { useLanguage } from '../../contexts/LanguageContext';
-import type { Language } from '../../translations';
+import React, { useState, useEffect, useRef } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import Button from "./Button";
+import { useLanguage } from "../../contexts/LanguageContext";
+import type { Language } from "../../translations";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
   const languageDropdownRef = useRef<HTMLDivElement>(null);
   const { language: selectedLanguage, setLanguage } = useLanguage();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navLinks = [
-    { name: 'Home', href: '#top', scroll: true },
-    { name: 'About', href: '#roles', scroll: true },
-    { name: 'How It Works', href: '#how-it-works', scroll: true },
-    { name: 'Reviews', href: '#testimonials', scroll: true },
-    { name: 'Contact', href: '#contact', scroll: true },
-    { name: 'Pricing', href: '/pricing', scroll: false },
+    { name: "Home", path: "/", sectionId: null },
+    { name: "About", path: "/about", sectionId: null },
+    { name: "How It Works", path: "/", sectionId: "how-it-works" },
+    { name: "Reviews", path: "/", sectionId: "testimonials" },
+    { name: "Contact", path: "/", sectionId: "contact" },
+    { name: "Pricing", path: "/pricing", sectionId: null },
   ];
 
   const languages = [
-    { code: 'en', name: 'English', flag: '🇺🇸' },
-    { code: 'zh', name: '中文', flag: '🇨🇳' },
-    { code: 'ko', name: '한국어', flag: '🇰🇷' },
-    { code: 'es', name: 'Español', flag: '🇪🇸' },
+    { code: "en", name: "English", flag: "🇺🇸" },
+    { code: "zh", name: "中文", flag: "🇨🇳" },
+    { code: "ko", name: "한국어", flag: "🇰🇷" },
+    { code: "es", name: "Español", flag: "🇪🇸" },
   ];
 
   const handleLanguageChange = (languageCode: string) => {
@@ -31,36 +33,63 @@ const Navbar: React.FC = () => {
     setIsLanguageDropdownOpen(false);
   };
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, link: typeof navLinks[0]) => {
-    if (link.scroll) {
-      e.preventDefault();
-      const targetId = link.href.substring(1);
-      if (targetId === 'top') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        const element = document.getElementById(targetId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navbarHeight = 80; // Height of fixed navbar
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
+  };
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    link: (typeof navLinks)[0]
+  ) => {
+    e.preventDefault();
     setIsMenuOpen(false);
+
+    // If link has a section ID and we're already on the target page
+    if (link.sectionId && location.pathname === link.path) {
+      scrollToSection(link.sectionId);
+    }
+    // If link has a section ID but we're on a different page
+    else if (link.sectionId && location.pathname !== link.path) {
+      navigate(link.path);
+      // Wait for navigation to complete before scrolling
+      setTimeout(() => {
+        scrollToSection(link.sectionId);
+      }, 100);
+    }
+    // If it's just a regular page navigation
+    else {
+      navigate(link.path);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   // Close language dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (languageDropdownRef.current && !languageDropdownRef.current.contains(event.target as Node)) {
+      if (
+        languageDropdownRef.current &&
+        !languageDropdownRef.current.contains(event.target as Node)
+      ) {
         setIsLanguageDropdownOpen(false);
       }
     };
 
     if (isLanguageDropdownOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isLanguageDropdownOpen]);
 
@@ -86,9 +115,9 @@ const Navbar: React.FC = () => {
             {navLinks.map((link) => (
               <a
                 key={link.name}
-                href={link.href}
+                href={link.sectionId ? `#${link.sectionId}` : link.path}
                 onClick={(e) => handleNavClick(e, link)}
-                className="text-gray hover:text-navy transition-colors duration-200 text-sm font-medium"
+                className="text-gray hover:text-navy transition-colors duration-200 text-sm font-medium cursor-pointer"
               >
                 {link.name}
               </a>
@@ -97,18 +126,37 @@ const Navbar: React.FC = () => {
             {/* Language Selector Dropdown */}
             <div className="relative" ref={languageDropdownRef}>
               <button
-                onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
+                onClick={() =>
+                  setIsLanguageDropdownOpen(!isLanguageDropdownOpen)
+                }
                 className="flex items-center space-x-2 text-gray hover:text-navy transition-colors duration-200 text-sm font-medium px-3 py-2 rounded-md hover:bg-cream-dark"
               >
-                <span>{languages.find(lang => lang.code === selectedLanguage)?.flag}</span>
-                <span>{languages.find(lang => lang.code === selectedLanguage)?.name}</span>
+                <span>
+                  {
+                    languages.find((lang) => lang.code === selectedLanguage)
+                      ?.flag
+                  }
+                </span>
+                <span>
+                  {
+                    languages.find((lang) => lang.code === selectedLanguage)
+                      ?.name
+                  }
+                </span>
                 <svg
-                  className={`w-4 h-4 transition-transform ${isLanguageDropdownOpen ? 'rotate-180' : ''}`}
+                  className={`w-4 h-4 transition-transform ${
+                    isLanguageDropdownOpen ? "rotate-180" : ""
+                  }`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
                 </svg>
               </button>
 
@@ -119,7 +167,9 @@ const Navbar: React.FC = () => {
                       key={lang.code}
                       onClick={() => handleLanguageChange(lang.code)}
                       className={`w-full flex items-center space-x-3 px-4 py-2 text-sm hover:bg-cream transition-colors ${
-                        selectedLanguage === lang.code ? 'bg-cream text-navy font-medium' : 'text-gray'
+                        selectedLanguage === lang.code
+                          ? "bg-cream text-navy font-medium"
+                          : "text-gray"
                       }`}
                     >
                       <span>{lang.flag}</span>
@@ -132,7 +182,9 @@ const Navbar: React.FC = () => {
 
             {/* Login Button */}
             <Link to="/login">
-              <Button size="sm" variant="outline">Login</Button>
+              <Button size="sm" variant="outline">
+                Login
+              </Button>
             </Link>
           </div>
 
@@ -166,9 +218,9 @@ const Navbar: React.FC = () => {
               {navLinks.map((link) => (
                 <a
                   key={link.name}
-                  href={link.href}
+                  href={link.sectionId ? `#${link.sectionId}` : link.path}
                   onClick={(e) => handleNavClick(e, link)}
-                  className="text-gray hover:text-navy transition-colors duration-200 text-sm font-medium"
+                  className="text-gray hover:text-navy transition-colors duration-200 text-sm font-medium cursor-pointer"
                 >
                   {link.name}
                 </a>
@@ -184,8 +236,8 @@ const Navbar: React.FC = () => {
                       onClick={() => handleLanguageChange(lang.code)}
                       className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm transition-colors ${
                         selectedLanguage === lang.code
-                          ? 'bg-coral text-white'
-                          : 'bg-white text-gray hover:bg-cream'
+                          ? "bg-coral text-white"
+                          : "bg-white text-gray hover:bg-cream"
                       }`}
                     >
                       <span>{lang.flag}</span>
