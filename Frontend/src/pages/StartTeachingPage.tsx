@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/common/Navbar';
 import Button from '../components/common/Button';
 import Footer from '../components/common/Footer';
 
 const StartTeachingPage: React.FC = () => {
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-cream">
@@ -70,10 +72,10 @@ const StartTeachingPage: React.FC = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button size="lg">
+                <Button size="lg" onClick={() => navigate('/apply-tutor')}>
                   Apply to Teach
                 </Button>
-                <Button size="lg" variant="outline" onClick={() => window.location.href = '/'}>
+                <Button size="lg" variant="outline" onClick={() => navigate('/')}>
                   Back to Home
                 </Button>
               </div>
@@ -141,7 +143,7 @@ const StartTeachingPage: React.FC = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Button size="lg">
+            <Button size="lg" onClick={() => navigate('/apply-tutor')}>
               Start Your Application
             </Button>
           </div>
@@ -222,7 +224,7 @@ const StartTeachingPage: React.FC = () => {
             <p className="text-gray mb-6">
               Ready to join our community of passionate educators?
             </p>
-            <Button size="lg">
+            <Button size="lg" onClick={() => navigate('/apply-tutor')}>
               Apply Now
             </Button>
           </div>

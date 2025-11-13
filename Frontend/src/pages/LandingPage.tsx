@@ -6,6 +6,7 @@ import HowItWorksSection from "../components/landing/HowItWorksSection";
 import PricingSection from "../components/landing/PricingSection";
 import TestimonialsSection from "../components/landing/TestimonialsSection";
 import FAQSection from "../components/landing/FAQSection";
+import Contact from "../components/landing/Contact";
 import FinalCTASection from "../components/landing/FinalCTASection";
 import Footer from "../components/common/Footer";
 
@@ -51,6 +52,11 @@ const LandingPage: React.FC = () => {
       {/* FAQ SECTION */}
       {/* ============================================ */}
       <FAQSection />
+
+      {/* ============================================ */}
+      {/* CONTACT SECTION */}
+      {/* ============================================ */}
+      <Contact />
 
       {/* ============================================ */}
       {/* FINAL CTA SECTION */}

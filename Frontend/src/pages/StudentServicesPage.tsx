@@ -71,12 +71,16 @@ const StudentServicesPage: React.FC = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button size="lg">
-                  Browse Tutors
-                </Button>
-                <Button size="lg" variant="outline" onClick={() => window.location.href = '/'}>
-                  Back to Home
-                </Button>
+                <Link to="/start-learning">
+                  <Button size="lg">
+                    Start Learning
+                  </Button>
+                </Link>
+                <Link to="/">
+                  <Button size="lg" variant="outline">
+                    Back to Home
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -142,9 +146,11 @@ const StudentServicesPage: React.FC = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Button size="lg">
-              Get Started Now
-            </Button>
+            <Link to="/start-learning">
+              <Button size="lg">
+                Start Learning
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
