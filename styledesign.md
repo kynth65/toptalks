@@ -64,6 +64,21 @@ font-family: 'Inter', 'Nunito', ui-sans-serif, system-ui, sans-serif;
 
 ## Spacing & Layout
 
+### Section Vertical Spacing
+Standard vertical spacing for page sections using responsive padding:
+
+| Section Type | Mobile | Tablet | Desktop | Usage |
+|--------------|--------|--------|---------|-------|
+| Standard Sections | `py-20` | `md:py-28` | `lg:py-40` | Benefits, How It Works, Pricing, Testimonials, FAQ, Contact |
+| Primary CTA Sections | `py-24` | `md:py-36` | `lg:py-48` | Final CTA, major conversion sections |
+| Hero Section | `pb-28` | `md:pb-36` | `lg:pb-48` | Hero bottom padding (top padding is `pt-32` to clear navbar) |
+
+**Spacing Values:**
+- Standard: `5rem → 7rem → 10rem` (80px → 112px → 160px)
+- Primary CTA: `6rem → 9rem → 12rem` (96px → 144px → 192px)
+
+This creates generous whitespace that improves readability and gives content room to breathe, especially on larger screens.
+
 ### Border Radius
 | Name | Value | CSS Variable | Usage |
 |------|-------|--------------|-------|
@@ -181,7 +196,7 @@ Cards use primary accent colors:
 #### Structure
 - Min height: `min-h-screen`
 - Padding top: `pt-32` (to clear fixed navbar)
-- Padding bottom: `pb-20`
+- Padding bottom: `pb-28 md:pb-36 lg:pb-48` (responsive vertical spacing)
 - Padding horizontal: `px-4 sm:px-6 lg:px-8`
 - Overflow: `overflow-hidden` (for blob animations)
 
