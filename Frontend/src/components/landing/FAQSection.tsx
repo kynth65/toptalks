@@ -41,7 +41,7 @@ const FAQSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <section className="py-20 md:py-28 lg:py-40 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         {/* Section Heading */}
         <div className="text-center mb-12">

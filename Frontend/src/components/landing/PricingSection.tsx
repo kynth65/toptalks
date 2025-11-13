@@ -64,7 +64,7 @@ const PricingSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-cream">
+    <section className="py-20 md:py-28 lg:py-40 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center mb-16">

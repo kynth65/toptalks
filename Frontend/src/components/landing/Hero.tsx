@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative min-h-screen pt-32 pb-28 md:pb-36 lg:pb-48 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background Blobs */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 left-10 w-64 h-64 bg-coral/20 rounded-full blur-3xl animate-blob"></div>
