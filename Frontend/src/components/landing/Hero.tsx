@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex items-center pt-32 lg:pt-40 pb-28 md:pb-36 lg:pb-48 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-32 lg:pt-44 pb-28 md:pb-36 lg:pb-48 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background Blobs */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 left-10 w-64 h-64 bg-coral/20 rounded-full blur-3xl animate-blob"></div>
@@ -44,9 +44,16 @@ const Hero: React.FC = () => {
 
             {/* Social Proof Badge */}
             <div className="pt-4 flex items-center gap-4">
-              <div className="flex -space-x-2" role="img" aria-label="Happy students">
+              <div
+                className="flex -space-x-2"
+                role="img"
+                aria-label="Happy students"
+              >
                 <picture>
-                  <source srcSet="/images/student_asian_wearing_white_shirt.webp" type="image/webp" />
+                  <source
+                    srcSet="/images/student_asian_wearing_white_shirt.webp"
+                    type="image/webp"
+                  />
                   <img
                     src="/images/student_asian_wearing_white_shirt.png"
                     alt=""
@@ -55,7 +62,10 @@ const Hero: React.FC = () => {
                   />
                 </picture>
                 <picture>
-                  <source srcSet="/images/student_wearing_denimandwhite_shirt.webp" type="image/webp" />
+                  <source
+                    srcSet="/images/student_wearing_denimandwhite_shirt.webp"
+                    type="image/webp"
+                  />
                   <img
                     src="/images/student_wearing_denimandwhite_shirt.png"
                     alt=""
@@ -64,7 +74,10 @@ const Hero: React.FC = () => {
                   />
                 </picture>
                 <picture>
-                  <source srcSet="/images/student_asian_wearing_white_shirt.webp" type="image/webp" />
+                  <source
+                    srcSet="/images/student_asian_wearing_white_shirt.webp"
+                    type="image/webp"
+                  />
                   <img
                     src="/images/student_asian_wearing_white_shirt.png"
                     alt=""
@@ -73,7 +86,10 @@ const Hero: React.FC = () => {
                   />
                 </picture>
                 <picture>
-                  <source srcSet="/images/student_wearing_denimandwhite_shirt.webp" type="image/webp" />
+                  <source
+                    srcSet="/images/student_wearing_denimandwhite_shirt.webp"
+                    type="image/webp"
+                  />
                   <img
                     src="/images/student_wearing_denimandwhite_shirt.png"
                     alt=""
@@ -85,7 +101,9 @@ const Hero: React.FC = () => {
               <div className="text-sm text-gray">
                 <div className="font-semibold">10,000+ Students</div>
                 <div className="flex items-center gap-1">
-                  <span className="text-yellow-500" aria-label="5 star rating">★★★★★</span>
+                  <span className="text-yellow-500" aria-label="5 star rating">
+                    ★★★★★
+                  </span>
                   <span>4.9/5</span>
                 </div>
               </div>
@@ -95,13 +113,16 @@ const Hero: React.FC = () => {
           {/* Right Column - Teacher Image */}
           <div className="relative h-[400px] md:h-[500px] lg:h-[600px] flex justify-center items-center animate-fade-in-right">
             {/* Teacher Image */}
-            <div className="relative w-full max-w-md h-full">
+            <div className="relative w-full  h-full">
               <picture>
-                <source srcSet="/images/teacher_wearing_denim.webp" type="image/webp" />
+                <source
+                  srcSet="/images/teacher_wearing_denim.webp"
+                  type="image/webp"
+                />
                 <img
                   src="/images/teacher_wearing_denim.png"
                   alt="Professional teacher ready to help students learn"
-                  className="w-full h-full object-contain drop-shadow-2xl rounded-[1.5rem]"
+                  className="w-full h-full object-cover drop-shadow-2xl rounded-[1.5rem]"
                   loading="lazy"
                 />
               </picture>
