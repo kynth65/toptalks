@@ -3,7 +3,6 @@ import Navbar from "../components/common/Navbar";
 import Hero from "../components/landing/Hero";
 import BenefitsSection from "../components/landing/BenefitsSection";
 import HowItWorksSection from "../components/landing/HowItWorksSection";
-import PricingSection from "../components/landing/PricingSection";
 import TestimonialsSection from "../components/landing/TestimonialsSection";
 import FAQSection from "../components/landing/FAQSection";
 import Contact from "../components/landing/Contact";
@@ -37,11 +36,6 @@ const LandingPage: React.FC = () => {
       {/* HOW IT WORKS SECTION */}
       {/* ============================================ */}
       <HowItWorksSection />
-
-      {/* ============================================ */}
-      {/* PRICING SECTION */}
-      {/* ============================================ */}
-      <PricingSection />
 
       {/* ============================================ */}
       {/* TESTIMONIALS SECTION */}
