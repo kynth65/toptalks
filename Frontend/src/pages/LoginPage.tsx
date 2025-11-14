@@ -1,51 +1,47 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Button from '../components/common/Button';
-import Footer from '../components/common/Footer';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useLanguage } from "../contexts/LanguageContext";
+import Navbar from "../components/common/Navbar";
+import Button from "../components/common/Button";
+import Footer from "../components/common/Footer";
 
 const LoginPage: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const { t } = useLanguage();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle login logic here
-    console.log('Login submitted:', { email, password, rememberMe });
+    console.log("Login submitted:", { email, password, rememberMe });
   };
 
   return (
     <div className="min-h-screen bg-cream flex flex-col">
-      {/* Header */}
-      <div className="px-4 sm:px-6 lg:px-8 py-6">
-        <div className="max-w-7xl mx-auto">
-          <Link to="/" className="inline-flex items-center">
-            <h1 className="text-2xl md:text-3xl font-bold text-navy">
-              TopTalks
-              <span className="inline-flex ml-1 gap-1">
-                <span className="w-2 h-2 rounded-full bg-mint"></span>
-                <span className="w-2 h-2 rounded-full bg-coral"></span>
-              </span>
-            </h1>
-          </Link>
-        </div>
-      </div>
+      {/* Navbar */}
+      <Navbar />
 
       {/* Main Content */}
-      <div className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
+      <div className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-42 pt-28 lg:pt-42">
         <div className="w-full max-w-md">
           {/* Login Card */}
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-navy mb-2">Welcome Back</h2>
-              <p className="text-gray">Sign in to continue your learning journey</p>
+              <h2 className="text-3xl font-bold text-navy mb-2">
+                {t.loginPage.title}
+              </h2>
+              <p className="text-gray">{t.loginPage.subtitle}</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Email Field */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-navy mb-2">
-                  Email Address
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-navy mb-2"
+                >
+                  {t.loginPage.emailLabel}
                 </label>
                 <input
                   id="email"
@@ -54,14 +50,17 @@ const LoginPage: React.FC = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent transition-all outline-none"
-                  placeholder="you@example.com"
+                  placeholder={t.loginPage.emailPlaceholder}
                 />
               </div>
 
               {/* Password Field */}
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-navy mb-2">
-                  Password
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-navy mb-2"
+                >
+                  {t.loginPage.passwordLabel}
                 </label>
                 <input
                   id="password"
@@ -70,7 +69,7 @@ const LoginPage: React.FC = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent transition-all outline-none"
-                  placeholder="Enter your password"
+                  placeholder={t.loginPage.passwordPlaceholder}
                 />
               </div>
 
@@ -83,16 +82,21 @@ const LoginPage: React.FC = () => {
                     onChange={(e) => setRememberMe(e.target.checked)}
                     className="w-4 h-4 text-coral border-gray-300 rounded focus:ring-coral cursor-pointer"
                   />
-                  <span className="ml-2 text-sm text-gray">Remember me</span>
+                  <span className="ml-2 text-sm text-gray">
+                    {t.loginPage.rememberMe}
+                  </span>
                 </label>
-                <a href="#" className="text-sm text-coral hover:text-navy transition-colors">
-                  Forgot password?
-                </a>
+                <Link
+                  to="/forgot-password"
+                  className="text-sm text-coral hover:text-navy transition-colors"
+                >
+                  {t.loginPage.forgotPassword}
+                </Link>
               </div>
 
               {/* Submit Button */}
               <Button type="submit" variant="primary" className="w-full">
-                Sign In
+                {t.loginPage.signInButton}
               </Button>
             </form>
 
@@ -102,7 +106,9 @@ const LoginPage: React.FC = () => {
                 <div className="w-full border-t border-gray-200"></div>
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-4 bg-white text-gray">Or continue with</span>
+                <span className="px-4 bg-white text-gray">
+                  {t.loginPage.orContinueWith}
+                </span>
               </div>
             </div>
 
@@ -127,23 +133,34 @@ const LoginPage: React.FC = () => {
                     d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
                   />
                 </svg>
-                <span className="text-sm font-medium text-gray">Google</span>
+                <span className="text-sm font-medium text-gray">
+                  {t.loginPage.google}
+                </span>
               </button>
               <button className="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-lg hover:bg-cream transition-colors">
-                <svg className="w-5 h-5 mr-2" fill="#1877F2" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                <svg
+                  className="w-5 h-5 mr-2"
+                  fill="#1877F2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                 </svg>
-                <span className="text-sm font-medium text-gray">Facebook</span>
+                <span className="text-sm font-medium text-gray">
+                  {t.loginPage.facebook}
+                </span>
               </button>
             </div>
           </div>
 
           {/* Sign Up Link */}
           <p className="mt-6 text-center text-sm text-gray">
-            Don't have an account?{' '}
-            <a href="#" className="font-medium text-coral hover:text-navy transition-colors">
-              Sign up for free
-            </a>
+            {t.loginPage.noAccount}{" "}
+            <Link
+              to="/signup"
+              className="font-medium text-coral hover:text-navy transition-colors"
+            >
+              {t.loginPage.signUpLink}
+            </Link>
           </p>
         </div>
       </div>
