@@ -33,7 +33,9 @@ const Navbar: React.FC = () => {
     setIsLanguageDropdownOpen(false);
   };
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId: string | null) => {
+    if (!sectionId) return;
+
     const element = document.getElementById(sectionId);
     if (element) {
       const navbarHeight = 80; // Height of fixed navbar
