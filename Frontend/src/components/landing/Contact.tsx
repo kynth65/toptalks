@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import Button from '../common/Button';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '../../config/emailjs';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
+
+  // Initialize EmailJS on component mount
+  useEffect(() => {
+    if (EMAILJS_CONFIG.publicKey) {
+      emailjs.init(EMAILJS_CONFIG.publicKey);
+      console.log('✅ EmailJS initialized with public key:', EMAILJS_CONFIG.publicKey);
+    } else {
+      console.error('❌ EmailJS public key is missing!');
+    }
+  }, []);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,19 +31,77 @@ const Contact: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+    console.log('🔥 FORM SUBMIT TRIGGERED!', e);
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+    // Debug: Log configuration
+    console.log('EmailJS Config Check:', {
+      hasServiceId: !!EMAILJS_CONFIG.serviceId,
+      hasTemplateId: !!EMAILJS_CONFIG.templateId,
+      hasPublicKey: !!EMAILJS_CONFIG.publicKey,
+      serviceId: EMAILJS_CONFIG.serviceId,
+      templateId: EMAILJS_CONFIG.templateId,
+      publicKey: EMAILJS_CONFIG.publicKey
+    });
 
-      // Reset success message after 5 seconds
+    // Validate configuration
+    if (!EMAILJS_CONFIG.serviceId || !EMAILJS_CONFIG.templateId || !EMAILJS_CONFIG.publicKey) {
+      console.error('EmailJS configuration is incomplete. Please check your .env file.');
+      alert('Email service is not configured. Please contact the administrator.');
+      setIsSubmitting(false);
+      setSubmitStatus('error');
+      return;
+    }
+
+    try {
+      // Prepare template parameters for EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        // Add subject type for better email organization
+        inquiry_type: formData.subject === 'student' ? 'Student Inquiry' :
+                      formData.subject === 'tutor' ? 'Tutor Application' :
+                      formData.subject === 'technical' ? 'Technical Support' :
+                      formData.subject === 'billing' ? 'Billing Question' :
+                      'General Inquiry',
+      };
+
+      console.log('Sending email with params:', templateParams);
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateId,
+        templateParams,
+        EMAILJS_CONFIG.publicKey
+      );
+
+      console.log('EmailJS Response:', response);
+
+      if (response.status === 200) {
+        setIsSubmitting(false);
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitStatus(null), 5000);
+      }
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      console.error('Error details:', {
+        message: error instanceof Error ? error.message : 'Unknown error',
+        error
+      });
+      setIsSubmitting(false);
+      setSubmitStatus('error');
+
+      // Reset error message after 5 seconds
       setTimeout(() => setSubmitStatus(null), 5000);
-    }, 1500);
+    }
   };
 
   return (
