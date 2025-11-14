@@ -1,10 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
 import Navbar from '../components/common/Navbar';
 import Button from '../components/common/Button';
 import Footer from '../components/common/Footer';
 
 const StartTeachingPage: React.FC = () => {
+  const { t } = useLanguage();
   const navigate = useNavigate();
 
   return (
@@ -25,10 +27,10 @@ const StartTeachingPage: React.FC = () => {
             {/* Left Column - Text Content */}
             <div className="space-y-6 animate-fade-in-up">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight">
-                Teach & Inspire Worldwide
+                {t.startTeachingPage.hero.title}
               </h1>
               <p className="text-xl text-gray max-w-xl">
-                Share your expertise with students around the globe. Set your own schedule, rates, and teaching style while making a meaningful impact.
+                {t.startTeachingPage.hero.subtitle}
               </p>
 
               {/* Features List */}
@@ -40,8 +42,8 @@ const StartTeachingPage: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-navy text-lg">Work From Anywhere</h3>
-                    <p className="text-gray">Teach from the comfort of your home or while traveling the world</p>
+                    <h3 className="font-semibold text-navy text-lg">{t.startTeachingPage.hero.feature1Title}</h3>
+                    <p className="text-gray">{t.startTeachingPage.hero.feature1Desc}</p>
                   </div>
                 </div>
 
@@ -52,8 +54,8 @@ const StartTeachingPage: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-navy text-lg">Set Your Own Schedule</h3>
-                    <p className="text-gray">Choose when you want to teach and how many hours you work</p>
+                    <h3 className="font-semibold text-navy text-lg">{t.startTeachingPage.hero.feature2Title}</h3>
+                    <p className="text-gray">{t.startTeachingPage.hero.feature2Desc}</p>
                   </div>
                 </div>
 
@@ -64,8 +66,8 @@ const StartTeachingPage: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-navy text-lg">Earn Competitive Income</h3>
-                    <p className="text-gray">Set your own rates and keep 80% of your earnings</p>
+                    <h3 className="font-semibold text-navy text-lg">{t.startTeachingPage.hero.feature3Title}</h3>
+                    <p className="text-gray">{t.startTeachingPage.hero.feature3Desc}</p>
                   </div>
                 </div>
               </div>
@@ -73,10 +75,10 @@ const StartTeachingPage: React.FC = () => {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button size="lg" onClick={() => navigate('/apply-tutor')}>
-                  Apply to Teach
+                  {t.startTeachingPage.hero.applyButton}
                 </Button>
                 <Button size="lg" variant="outline" onClick={() => navigate('/')}>
-                  Back to Home
+                  {t.startTeachingPage.hero.homeButton}
                 </Button>
               </div>
             </div>
@@ -100,10 +102,10 @@ const StartTeachingPage: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">
-              How It Works
+              {t.startTeachingPage.howItWorks.title}
             </h2>
             <p className="text-xl text-gray max-w-2xl mx-auto">
-              Join our community of tutors in three simple steps
+              {t.startTeachingPage.howItWorks.subtitle}
             </p>
           </div>
 
@@ -113,9 +115,9 @@ const StartTeachingPage: React.FC = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-coral rounded-full text-white text-2xl font-bold">
                 1
               </div>
-              <h3 className="text-2xl font-bold text-navy">Apply to Teach</h3>
+              <h3 className="text-2xl font-bold text-navy">{t.startTeachingPage.howItWorks.step1Title}</h3>
               <p className="text-gray">
-                Submit your application with your teaching credentials and experience. We'll review it within 48 hours
+                {t.startTeachingPage.howItWorks.step1Desc}
               </p>
             </div>
 
@@ -124,9 +126,9 @@ const StartTeachingPage: React.FC = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-mint rounded-full text-white text-2xl font-bold">
                 2
               </div>
-              <h3 className="text-2xl font-bold text-navy">Set Your Schedule</h3>
+              <h3 className="text-2xl font-bold text-navy">{t.startTeachingPage.howItWorks.step2Title}</h3>
               <p className="text-gray">
-                Create your profile, set your rates, and choose your available teaching hours
+                {t.startTeachingPage.howItWorks.step2Desc}
               </p>
             </div>
 
@@ -135,16 +137,16 @@ const StartTeachingPage: React.FC = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-butter rounded-full text-white text-2xl font-bold">
                 3
               </div>
-              <h3 className="text-2xl font-bold text-navy">Start Teaching</h3>
+              <h3 className="text-2xl font-bold text-navy">{t.startTeachingPage.howItWorks.step3Title}</h3>
               <p className="text-gray">
-                Connect with students worldwide and start earning while making a difference
+                {t.startTeachingPage.howItWorks.step3Desc}
               </p>
             </div>
           </div>
 
           <div className="text-center mt-12">
             <Button size="lg" onClick={() => navigate('/apply-tutor')}>
-              Start Your Application
+              {t.startTeachingPage.howItWorks.ctaButton}
             </Button>
           </div>
         </div>
@@ -155,10 +157,10 @@ const StartTeachingPage: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">
-              What You Need
+              {t.startTeachingPage.requirements.title}
             </h2>
             <p className="text-xl text-gray">
-              Basic requirements to become a TopTalks tutor
+              {t.startTeachingPage.requirements.subtitle}
             </p>
           </div>
 
@@ -171,8 +173,8 @@ const StartTeachingPage: React.FC = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-navy text-lg mb-1">Teaching Experience</h3>
-                  <p className="text-gray">At least 1 year of teaching or tutoring experience</p>
+                  <h3 className="font-semibold text-navy text-lg mb-1">{t.startTeachingPage.requirements.req1Title}</h3>
+                  <p className="text-gray">{t.startTeachingPage.requirements.req1Desc}</p>
                 </div>
               </div>
             </div>
@@ -185,8 +187,8 @@ const StartTeachingPage: React.FC = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-navy text-lg mb-1">Language Proficiency</h3>
-                  <p className="text-gray">Native or near-native proficiency in your teaching language</p>
+                  <h3 className="font-semibold text-navy text-lg mb-1">{t.startTeachingPage.requirements.req2Title}</h3>
+                  <p className="text-gray">{t.startTeachingPage.requirements.req2Desc}</p>
                 </div>
               </div>
             </div>
@@ -199,8 +201,8 @@ const StartTeachingPage: React.FC = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-navy text-lg mb-1">Reliable Technology</h3>
-                  <p className="text-gray">Stable internet connection, webcam, and microphone</p>
+                  <h3 className="font-semibold text-navy text-lg mb-1">{t.startTeachingPage.requirements.req3Title}</h3>
+                  <p className="text-gray">{t.startTeachingPage.requirements.req3Desc}</p>
                 </div>
               </div>
             </div>
@@ -213,8 +215,8 @@ const StartTeachingPage: React.FC = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-navy text-lg mb-1">Passion for Teaching</h3>
-                  <p className="text-gray">Enthusiasm for helping students achieve their goals</p>
+                  <h3 className="font-semibold text-navy text-lg mb-1">{t.startTeachingPage.requirements.req4Title}</h3>
+                  <p className="text-gray">{t.startTeachingPage.requirements.req4Desc}</p>
                 </div>
               </div>
             </div>
@@ -222,10 +224,10 @@ const StartTeachingPage: React.FC = () => {
 
           <div className="text-center mt-12">
             <p className="text-gray mb-6">
-              Ready to join our community of passionate educators?
+              {t.startTeachingPage.requirements.footer}
             </p>
             <Button size="lg" onClick={() => navigate('/apply-tutor')}>
-              Apply Now
+              {t.startTeachingPage.requirements.ctaButton}
             </Button>
           </div>
         </div>
