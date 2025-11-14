@@ -8,6 +8,7 @@ import StartTeachingPage from './pages/StartTeachingPage'
 import TutorApplicationPage from './pages/TutorApplicationPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
+import NotFoundPage from './pages/NotFoundPage'
 import { LanguageProvider } from './contexts/LanguageContext'
 import ScrollToTop from './components/common/ScrollToTop'
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/start-learning" element={<StartLearningPage />} />
           <Route path="/start-teaching" element={<StartTeachingPage />} />
           <Route path="/apply-tutor" element={<TutorApplicationPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </LanguageProvider>
