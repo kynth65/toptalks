@@ -146,6 +146,7 @@ export const zh = {
     tagline: "与全球专业导师联系，通过个性化学习掌握英语。",
     quickLinks: "快速链接",
     home: "首页",
+    about: "关于我们",
     pricing: "价格",
     howItWorks: "如何运作",
     reviews: "评论",
@@ -292,5 +293,229 @@ export const zh = {
       students: "满意学生",
       rating: "平均评分"
     }
+  },
+  pricingPage: {
+    hero: {
+      title: "简单透明的价格",
+      subtitle: "为您的学习之旅选择完美的计划。所有计划都可访问我们的全球认证导师网络。",
+      monthly: "每月",
+      yearly: "每年",
+      saveLabel: "节省20%"
+    },
+    plans: {
+      starter: {
+        name: "入门",
+        price: "$19",
+        period: "/月",
+        description: "非常适合开始语言学习之旅的初学者",
+        feature1: "每月4节课（每节30分钟）",
+        feature2: "访问基本学习材料",
+        feature3: "电子邮件支持",
+        feature4: "进度跟踪仪表板",
+        feature5: "时间安排灵活",
+        button: "开始"
+      },
+      professional: {
+        name: "专业",
+        price: "$49",
+        period: "/月",
+        description: "适合寻求持续进步的认真学习者",
+        feature1: "每月12节课（每节30分钟）",
+        feature2: "优先导师匹配",
+        feature3: "访问高级学习材料",
+        feature4: "作业和任务",
+        feature5: "24/7聊天支持",
+        feature6: "录制课程回放",
+        feature7: "定制学习路径",
+        button: "开始学习",
+        popular: "最受欢迎"
+      },
+      enterprise: {
+        name: "企业",
+        price: "$99",
+        period: "/月",
+        description: "适合有特定需求的团队和组织",
+        feature1: "无限课程（每节30分钟）",
+        feature2: "专职客户经理",
+        feature3: "定制课程开发",
+        feature4: "团队进度分析",
+        feature5: "24/7优先支持",
+        feature6: "多用户账户",
+        feature7: "高级报告工具",
+        feature8: "灵活的安排选项",
+        button: "联系销售"
+      }
+    },
+    faq: {
+      title: "常见问题",
+      question1: "我以后可以更改计划吗？",
+      answer1: "可以！您可以随时升级或降级计划。更改将在下一个计费周期生效。",
+      question2: "如果我错过了一节课怎么办？",
+      answer2: "您可以在预定时间前24小时重新安排课程。对于专业和企业计划，未使用的课程可以顺延到下个月。",
+      question3: "你们提供退款吗？",
+      answer3: "我们为所有新订阅提供14天退款保证。如果您不满意，请联系我们的支持团队以获得全额退款。",
+      question4: "我可以先试用吗？",
+      answer4: "可以！我们提供免费30分钟试听课，让您在承诺订阅计划之前体验我们的平台并认识导师。"
+    },
+    cta: {
+      title: "准备开始学习了吗？",
+      subtitle: "加入数千名在TopTalks提高英语技能的学生",
+      trialButton: "开始免费试用",
+      demoButton: "预约演示"
+    }
+  },
+  loginPage: {
+    logo: "TopTalks",
+    title: "欢迎回来",
+    subtitle: "登录以继续您的学习之旅",
+    emailLabel: "电子邮箱",
+    emailPlaceholder: "you@example.com",
+    passwordLabel: "密码",
+    passwordPlaceholder: "输入您的密码",
+    rememberMe: "记住我",
+    forgotPassword: "忘记密码？",
+    signInButton: "登录",
+    orContinueWith: "或继续使用",
+    google: "Google",
+    facebook: "Facebook",
+    noAccount: "还没有账户？",
+    signUpLink: "免费注册"
+  },
+  aboutPage: {
+    hero: {
+      title1: "打破语言障碍，",
+      title2: "一次对话",
+      subtitle: "TopTalks是世界领先的平台，将英语学习者与专业导师联系起来，提供符合您时间表和学习风格的个性化一对一课程。"
+    },
+    story: {
+      title: "我们的故事",
+      paragraph1: "TopTalks成立于2020年，源于一个简单的观察：学习语言的最佳方式是与真实的人进行真正的对话。传统的课堂环境和一刀切的应用程序无法为学习者提供真正卓越所需的个性化关注。",
+      paragraph2: "我们创建了TopTalks来弥补这一差距——一个充满激情的教育者和积极进取的学习者可以跨越边界和时区建立联系的平台。从一个由50名导师组成的小社区开始，已经发展成为一个由1000多名认证专业人士组成的繁荣全球网络，在120多个国家教授学生。",
+      paragraph3: "今天，我们很自豪地每天促成数千次对话，帮助学生实现他们的梦想——无论是找到梦想的工作、出国留学，还是简单地与世界各地的人建立联系。"
+    },
+    mission: {
+      title: "我们的使命与价值观",
+      missionTitle: "我们的使命",
+      missionText: "通过为学习者匹配最适合其独特需求的导师，让每个人都能在任何地方获得优质的英语教育。",
+      accessibility: "全球可访问性",
+      accessibilityText: "我们相信语言学习应该超越边界、预算和时区。我们的平台24/7全天候提供来自世界各地的导师。",
+      quality: "质量第一",
+      qualityText: "每位导师都经过彻底审查、认证，并持续评估以确保最高的教学标准和学生满意度。",
+      personalization: "个性化学习",
+      personalizationText: "我们认识到每个学习者都是独一无二的。我们的平台使学生能够找到与他们的学习风格、目标和兴趣相匹配的导师。",
+      community: "强大的社区",
+      communityText: "我们培养一个支持性社区，学习者和教育者可以在这里建立联系、分享经验并共同成长。",
+      innovation: "持续创新",
+      innovationText: "我们不断通过新功能、更好的匹配算法和增强的学习工具改进我们的平台。"
+    },
+    stats: {
+      title: "TopTalks数据",
+      tutors: "认证导师",
+      students: "活跃学生",
+      countries: "服务国家",
+      rating: "平均评分"
+    },
+    different: {
+      title: "我们的与众不同之处",
+      item1Title: "严格的导师选拔",
+      item1Text: "我们接受不到10%的导师申请者。每位导师都要经过证书验证、背景调查、示范课程评估和持续绩效监控。",
+      item2Title: "智能匹配技术",
+      item2Text: "我们的高级算法考虑学习目标、个性、教学风格和时间表，帮助您找到完美的导师匹配。",
+      item3Title: "灵活且实惠",
+      item3Text: "没有订阅或隐藏费用。按需付费，导师价格各异。轻松取消或重新安排课程。",
+      item4Title: "内置学习工具",
+      item4Text: "集成视频会议、交互式白板、课程笔记、进度跟踪和资源库——一站式平台。"
+    },
+    cta: {
+      title: "今天加入TopTalks社区",
+      subtitle: "无论您是想学习英语还是作为导师分享您的专业知识，TopTalks都是您建立有意义联系和取得实际成果的平台。",
+      studentButton: "寻找导师",
+      tutorButton: "成为导师"
+    }
+  },
+  startTeachingPage: {
+    hero: {
+      title: "全球教学与启发",
+      subtitle: "与全球学生分享您的专业知识。设置自己的时间表、费率和教学风格，同时产生有意义的影响。",
+      feature1Title: "随时随地工作",
+      feature1Desc: "在家中或旅行时舒适地教学",
+      feature2Title: "设置自己的时间表",
+      feature2Desc: "选择何时教学以及工作多少小时",
+      feature3Title: "赚取有竞争力的收入",
+      feature3Desc: "设定自己的费率并保留80%的收入",
+      applyButton: "申请教学",
+      homeButton: "返回首页"
+    },
+    howItWorks: {
+      title: "如何运作",
+      subtitle: "通过三个简单步骤加入我们的导师社区",
+      step1Title: "申请教学",
+      step1Desc: "提交您的申请，包括您的教学证书和经验。我们将在48小时内审核。",
+      step2Title: "设置您的时间表",
+      step2Desc: "创建您的个人资料，设置费率并选择可用的教学时间",
+      step3Title: "开始教学",
+      step3Desc: "与全球学生建立联系，在产生影响的同时开始赚钱",
+      ctaButton: "开始申请"
+    },
+    requirements: {
+      title: "您需要什么",
+      subtitle: "成为TopTalks导师的基本要求",
+      req1Title: "教学经验",
+      req1Desc: "至少1年的教学或辅导经验",
+      req2Title: "语言能力",
+      req2Desc: "教学语言的母语或接近母语的熟练程度",
+      req3Title: "可靠的技术",
+      req3Desc: "稳定的互联网连接、网络摄像头和麦克风",
+      req4Title: "教学热情",
+      req4Desc: "对帮助学生实现目标充满热情",
+      footer: "准备加入我们充满激情的教育者社区吗？",
+      ctaButton: "立即申请"
+    }
+  },
+  studentServicesPage: {
+    hero: {
+      title: "开始您的学习之旅",
+      subtitle: "与根据您的学习风格和目标量身定制的专业导师建立联系。获得符合您时间表和预算的个性化课程。",
+      feature1Title: "选择您的导师",
+      feature1Desc: "浏览个人资料、评论和专业知识，找到您的完美匹配",
+      feature2Title: "灵活安排",
+      feature2Desc: "在您方便的时间预订课程，无论您身在何处",
+      feature3Title: "实惠价格",
+      feature3Desc: "通过透明的价格让每个人都能获得优质教育",
+      startButton: "开始学习",
+      homeButton: "返回首页"
+    },
+    howItWorks: {
+      title: "如何运作",
+      subtitle: "开始很简单。遵循这三个简单步骤",
+      step1Title: "创建您的个人资料",
+      step1Desc: "注册并告诉我们您的学习目标、首选语言和时间表",
+      step2Title: "寻找您的导师",
+      step2Desc: "浏览我们的认证导师社区，并与您的首选预订试听课",
+      step3Title: "开始学习",
+      step3Desc: "开始您的个性化学习之旅并跟踪您的进度",
+      ctaButton: "开始学习"
+    },
+    pricingPreview: {
+      title: "透明价格",
+      subtitle: "选择适合您预算的灵活定价选项",
+      ctaButton: "查看所有定价计划"
+    }
+  },
+  navbar: {
+    home: "首页",
+    about: "关于",
+    pricing: "价格",
+    contact: "联系我们",
+    login: "登录",
+    startLearning: "开始学习"
+  },
+  notFound: {
+    title: "页面未找到",
+    subtitle: "此页面尚未创建。",
+    building: "我们仍在构建此功能！请稍后再来查看。",
+    redirecting: "将在以下时间后重定向到主页",
+    seconds: "秒",
+    goHome: "立即前往主页"
   }
 };

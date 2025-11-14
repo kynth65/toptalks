@@ -134,6 +134,7 @@ export const ko = {
     tagline: "전 세계 전문 튜터와 연결하고 맞춤형 학습을 통해 영어를 마스터하세요.",
     quickLinks: "빠른 링크",
     home: "홈",
+    about: "소개",
     pricing: "가격",
     howItWorks: "작동 방식",
     reviews: "리뷰",
@@ -279,5 +280,229 @@ export const ko = {
       students: "만족한 학생",
       rating: "평균 평점"
     }
+  },
+  pricingPage: {
+    hero: {
+      title: "간단하고 투명한 가격",
+      subtitle: "학습 여정에 완벽한 플랜을 선택하세요. 모든 플랜에는 전 세계 인증 튜터 네트워크에 대한 액세스가 포함됩니다.",
+      monthly: "월간",
+      yearly: "연간",
+      saveLabel: "20% 절약"
+    },
+    plans: {
+      starter: {
+        name: "스타터",
+        price: "$19",
+        period: "/월",
+        description: "언어 학습을 시작하는 초보자에게 완벽",
+        feature1: "월 4회 수업 (각 30분)",
+        feature2: "기본 학습 자료 액세스",
+        feature3: "이메일 지원",
+        feature4: "진행 상황 추적 대시보드",
+        feature5: "일정 유연성",
+        button: "시작하기"
+      },
+      professional: {
+        name: "프로페셔널",
+        price: "$49",
+        period: "/월",
+        description: "일관된 진전을 추구하는 진지한 학습자에게 이상적",
+        feature1: "월 12회 수업 (각 30분)",
+        feature2: "우선 튜터 매칭",
+        feature3: "프리미엄 학습 자료 액세스",
+        feature4: "숙제 및 과제",
+        feature5: "24/7 채팅 지원",
+        feature6: "녹화된 수업 재생",
+        feature7: "맞춤형 학습 경로",
+        button: "학습 시작",
+        popular: "가장 인기있는"
+      },
+      enterprise: {
+        name: "엔터프라이즈",
+        price: "$99",
+        period: "/월",
+        description: "특정 요구 사항이 있는 팀 및 조직을 위한",
+        feature1: "무제한 수업 (각 30분)",
+        feature2: "전담 계정 관리자",
+        feature3: "맞춤형 커리큘럼 개발",
+        feature4: "팀 진행 상황 분석",
+        feature5: "24/7 우선 지원",
+        feature6: "다중 사용자 계정",
+        feature7: "고급 보고 도구",
+        feature8: "유연한 예약 옵션",
+        button: "영업팀 문의"
+      }
+    },
+    faq: {
+      title: "자주 묻는 질문",
+      question1: "나중에 플랜을 변경할 수 있나요?",
+      answer1: "네! 언제든지 플랜을 업그레이드하거나 다운그레이드할 수 있습니다. 변경 사항은 다음 청구 주기에 반영됩니다.",
+      question2: "수업을 놓치면 어떻게 되나요?",
+      answer2: "예약된 시간 24시간 전까지 수업 일정을 변경할 수 있습니다. 사용하지 않은 수업은 프로페셔널 및 엔터프라이즈 플랜의 경우 다음 달로 이월됩니다.",
+      question3: "환불을 제공하나요?",
+      answer3: "모든 신규 구독에 대해 14일 환불 보증을 제공합니다. 만족하지 못하는 경우 지원팀에 문의하여 전액 환불받으세요.",
+      question4: "구매하기 전에 체험할 수 있나요?",
+      answer4: "네! 플랜에 가입하기 전에 플랫폼을 경험하고 튜터를 만날 수 있도록 30분 무료 체험 수업을 제공합니다."
+    },
+    cta: {
+      title: "학습을 시작할 준비가 되셨나요?",
+      subtitle: "TopTalks와 함께 영어 실력을 향상시키는 수천 명의 학생들과 함께하세요",
+      trialButton: "무료 체험 시작",
+      demoButton: "데모 예약"
+    }
+  },
+  loginPage: {
+    logo: "TopTalks",
+    title: "다시 오신 것을 환영합니다",
+    subtitle: "학습 여정을 계속하려면 로그인하세요",
+    emailLabel: "이메일 주소",
+    emailPlaceholder: "you@example.com",
+    passwordLabel: "비밀번호",
+    passwordPlaceholder: "비밀번호를 입력하세요",
+    rememberMe: "로그인 상태 유지",
+    forgotPassword: "비밀번호를 잊으셨나요?",
+    signInButton: "로그인",
+    orContinueWith: "또는 계속하기",
+    google: "Google",
+    facebook: "Facebook",
+    noAccount: "계정이 없으신가요?",
+    signUpLink: "무료로 가입하기"
+  },
+  aboutPage: {
+    hero: {
+      title1: "언어 장벽을 허물고,",
+      title2: " 한 번에 하나의 대화로",
+      subtitle: "TopTalks는 영어 학습자와 전문 튜터를 연결하여 일정과 학습 스타일에 맞는 맞춤형 일대일 수업을 제공하는 세계 최고의 플랫폼입니다."
+    },
+    story: {
+      title: "우리의 이야기",
+      paragraph1: "2020년에 설립된 TopTalks는 간단한 관찰에서 탄생했습니다: 언어를 배우는 가장 좋은 방법은 실제 사람들과의 진정한 대화를 통해서라는 것입니다. 전통적인 교실 환경과 획일적인 앱은 학습자들이 진정으로 뛰어나기 위해 필요한 맞춤형 관심을 제공하지 못했습니다.",
+      paragraph2: "우리는 이 격차를 해소하기 위해 TopTalks를 만들었습니다. 열정적인 교육자와 의욕적인 학습자가 국경과 시간대를 넘어 연결될 수 있는 플랫폼입니다. 50명의 튜터로 시작한 작은 커뮤니티는 120개 이상의 국가에서 학생들을 가르치는 1,000명 이상의 인증 전문가로 구성된 번성하는 글로벌 네트워크로 성장했습니다.",
+      paragraph3: "오늘날 우리는 매일 수천 건의 대화를 촉진하여 학생들이 꿈의 직장을 얻거나, 해외 유학을 하거나, 전 세계 사람들과 연결하는 등 꿈을 이루도록 돕고 있습니다."
+    },
+    mission: {
+      title: "우리의 사명과 가치",
+      missionTitle: "우리의 사명",
+      missionText: "학습자를 고유한 요구 사항에 완벽한 튜터와 연결하여 모든 사람, 모든 곳에서 양질의 영어 교육을 접근 가능하게 만드는 것입니다.",
+      accessibility: "글로벌 접근성",
+      accessibilityText: "우리는 언어 학습이 국경, 예산 및 시간대를 초월해야 한다고 믿습니다. 우리 플랫폼은 전 세계 튜터와 함께 연중무휴 24시간 이용 가능합니다.",
+      quality: "품질 우선",
+      qualityText: "모든 튜터는 철저히 검증되고, 인증되며, 최고의 교육 표준과 학생 만족도를 보장하기 위해 지속적으로 평가됩니다.",
+      personalization: "맞춤형 학습",
+      personalizationText: "우리는 모든 학습자가 고유하다는 것을 인식합니다. 우리 플랫폼은 학생들이 학습 스타일, 목표 및 관심사에 맞는 튜터를 찾을 수 있도록 지원합니다.",
+      community: "강력한 커뮤니티",
+      communityText: "우리는 학습자와 교육자가 연결하고, 경험을 공유하며, 함께 성장할 수 있는 지원 커뮤니티를 육성합니다.",
+      innovation: "지속적인 혁신",
+      innovationText: "우리는 새로운 기능, 더 나은 매칭 알고리즘 및 향상된 학습 도구로 플랫폼을 지속적으로 개선하고 있습니다."
+    },
+    stats: {
+      title: "숫자로 보는 TopTalks",
+      tutors: "인증된 튜터",
+      students: "활성 학생",
+      countries: "서비스 제공 국가",
+      rating: "평균 평점"
+    },
+    different: {
+      title: "우리를 차별화하는 것",
+      item1Title: "엄격한 튜터 선발",
+      item1Text: "우리는 튜터 지원자의 10% 미만을 받아들입니다. 각 튜터는 자격증 확인, 신원 조회, 데모 수업 및 지속적인 성과 모니터링을 거칩니다.",
+      item2Title: "스마트 매칭 기술",
+      item2Text: "우리의 고급 알고리즘은 학습 목표, 성격, 교육 스타일 및 일정을 고려하여 완벽한 튜터 매치를 찾도록 도와줍니다.",
+      item3Title: "유연하고 저렴한",
+      item3Text: "구독이나 숨겨진 수수료가 없습니다. 다양한 가격대의 튜터와 함께 사용한 만큼만 지불하세요. 수업을 쉽게 취소하거나 일정을 변경할 수 있습니다.",
+      item4Title: "통합 학습 도구",
+      item4Text: "통합 화상 회의, 대화형 화이트보드, 수업 노트, 진행 상황 추적 및 리소스 라이브러리 - 모두 하나의 플랫폼에."
+    },
+    cta: {
+      title: "오늘 TopTalks 커뮤니티에 가입하세요",
+      subtitle: "영어를 배우거나 튜터로서 전문 지식을 공유하고 싶다면 TopTalks는 의미 있는 연결과 실제 결과를 위한 플랫폼입니다.",
+      studentButton: "튜터 찾기",
+      tutorButton: "튜터 되기"
+    }
+  },
+  startTeachingPage: {
+    hero: {
+      title: "전 세계에서 가르치고 영감을 주세요",
+      subtitle: "전 세계 학생들과 전문 지식을 공유하세요. 의미 있는 영향을 미치면서 자신의 일정, 요금 및 교육 스타일을 설정하세요.",
+      feature1Title: "어디서나 일하기",
+      feature1Desc: "집에서 편안하게 또는 세계를 여행하면서 가르치세요",
+      feature2Title: "자신만의 일정 설정",
+      feature2Desc: "언제 가르치고 싶은지, 몇 시간 일할지 선택하세요",
+      feature3Title: "경쟁력 있는 수입 창출",
+      feature3Desc: "자신만의 요금을 설정하고 수익의 80%를 유지하세요",
+      applyButton: "가르치기 신청",
+      homeButton: "홈으로 돌아가기"
+    },
+    howItWorks: {
+      title: "작동 방식",
+      subtitle: "세 가지 간단한 단계로 튜터 커뮤니티에 가입하세요",
+      step1Title: "가르치기 신청",
+      step1Desc: "교육 자격증과 경험이 포함된 지원서를 제출하세요. 48시간 내에 검토하겠습니다",
+      step2Title: "일정 설정",
+      step2Desc: "프로필을 만들고, 요금을 설정하고, 가능한 교육 시간을 선택하세요",
+      step3Title: "가르치기 시작",
+      step3Desc: "전 세계 학생들과 연결하고 변화를 만들면서 수익을 창출하기 시작하세요",
+      ctaButton: "신청 시작"
+    },
+    requirements: {
+      title: "필요한 것",
+      subtitle: "TopTalks 튜터가 되기 위한 기본 요구 사항",
+      req1Title: "교육 경험",
+      req1Desc: "최소 1년의 교육 또는 튜터링 경험",
+      req2Title: "언어 능력",
+      req2Desc: "교육 언어의 원어민 수준 또는 그에 준하는 유창함",
+      req3Title: "안정적인 기술",
+      req3Desc: "안정적인 인터넷 연결, 웹캠 및 마이크",
+      req4Title: "교육에 대한 열정",
+      req4Desc: "학생들이 목표를 달성하도록 돕는 열정",
+      footer: "열정적인 교육자 커뮤니티에 가입할 준비가 되셨나요?",
+      ctaButton: "지금 신청"
+    }
+  },
+  studentServicesPage: {
+    hero: {
+      title: "학습 여정을 시작하세요",
+      subtitle: "학습 스타일과 목표에 맞춘 전문 튜터와 연결하세요. 일정과 예산에 맞는 맞춤형 수업을 받으세요.",
+      feature1Title: "튜터 선택",
+      feature1Desc: "프로필, 리뷰 및 전문 분야를 탐색하여 완벽한 매치를 찾으세요",
+      feature2Title: "유연한 일정",
+      feature2Desc: "전 세계 어디서나 편리한 시간에 수업을 예약하세요",
+      feature3Title: "합리적인 가격",
+      feature3Desc: "투명한 가격으로 모두가 접근할 수 있는 양질의 교육",
+      startButton: "학습 시작",
+      homeButton: "홈으로 돌아가기"
+    },
+    howItWorks: {
+      title: "작동 방식",
+      subtitle: "시작하기는 간단합니다. 세 가지 쉬운 단계를 따르세요",
+      step1Title: "프로필 만들기",
+      step1Desc: "가입하고 학습 목표, 선호 언어 및 일정에 대해 알려주세요",
+      step2Title: "튜터 찾기",
+      step2Desc: "인증된 튜터 커뮤니티를 탐색하고 최상의 선택과 체험 수업을 예약하세요",
+      step3Title: "학습 시작",
+      step3Desc: "맞춤형 학습 여정을 시작하고 진행 상황을 추적하세요",
+      ctaButton: "학습 시작"
+    },
+    pricingPreview: {
+      title: "투명한 가격",
+      subtitle: "예산에 맞는 유연한 가격 옵션 중에서 선택하세요",
+      ctaButton: "모든 가격 플랜 보기"
+    }
+  },
+  navbar: {
+    home: "홈",
+    about: "소개",
+    pricing: "가격",
+    contact: "연락처",
+    login: "로그인",
+    startLearning: "학습 시작"
+  },
+  notFound: {
+    title: "페이지를 찾을 수 없습니다",
+    subtitle: "이 페이지는 아직 생성되지 않았습니다.",
+    building: "아직 이 기능을 구축 중입니다! 곧 다시 확인해주세요.",
+    redirecting: "다음 시간 후 홈페이지로 리디렉션됩니다",
+    seconds: "초",
+    goHome: "지금 홈페이지로 이동"
   }
 };

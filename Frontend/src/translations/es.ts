@@ -134,6 +134,7 @@ export const es = {
     tagline: "Conecta con tutores expertos en todo el mundo y domina el inglés a través del aprendizaje personalizado.",
     quickLinks: "Enlaces Rápidos",
     home: "Inicio",
+    about: "Acerca de",
     pricing: "Precios",
     howItWorks: "Cómo Funciona",
     reviews: "Reseñas",
@@ -279,5 +280,229 @@ export const es = {
       students: "Estudiantes Felices",
       rating: "Calificación Promedio"
     }
+  },
+  pricingPage: {
+    hero: {
+      title: "Precios Simples y Transparentes",
+      subtitle: "Elige el plan perfecto para tu viaje de aprendizaje. Todos los planes incluyen acceso a nuestra red global de tutores certificados.",
+      monthly: "Mensual",
+      yearly: "Anual",
+      saveLabel: "Ahorra 20%"
+    },
+    plans: {
+      starter: {
+        name: "Inicial",
+        price: "$19",
+        period: "/mes",
+        description: "Perfecto para principiantes que comienzan su viaje de idiomas",
+        feature1: "4 lecciones por mes (30 minutos cada una)",
+        feature2: "Acceso a materiales de aprendizaje básicos",
+        feature3: "Soporte por correo electrónico",
+        feature4: "Panel de seguimiento de progreso",
+        feature5: "Flexibilidad de horario",
+        button: "Comenzar"
+      },
+      professional: {
+        name: "Profesional",
+        price: "$49",
+        period: "/mes",
+        description: "Ideal para estudiantes serios que buscan progreso constante",
+        feature1: "12 lecciones por mes (30 minutos cada una)",
+        feature2: "Emparejamiento prioritario de tutores",
+        feature3: "Acceso a materiales de aprendizaje premium",
+        feature4: "Tareas y asignaciones",
+        feature5: "Soporte por chat 24/7",
+        feature6: "Reproducción de lecciones grabadas",
+        feature7: "Ruta de aprendizaje personalizada",
+        button: "Comenzar a Aprender",
+        popular: "Más Popular"
+      },
+      enterprise: {
+        name: "Empresa",
+        price: "$99",
+        period: "/mes",
+        description: "Para equipos y organizaciones con necesidades específicas",
+        feature1: "Lecciones ilimitadas (30 minutos cada una)",
+        feature2: "Gerente de cuenta dedicado",
+        feature3: "Desarrollo de currículo personalizado",
+        feature4: "Analíticas de progreso del equipo",
+        feature5: "Soporte prioritario 24/7",
+        feature6: "Múltiples cuentas de usuario",
+        feature7: "Herramientas de informes avanzados",
+        feature8: "Opciones de programación flexibles",
+        button: "Contactar Ventas"
+      }
+    },
+    faq: {
+      title: "Preguntas Frecuentes",
+      question1: "¿Puedo cambiar mi plan más tarde?",
+      answer1: "¡Sí! Puedes actualizar o cambiar tu plan en cualquier momento. Los cambios se reflejarán en tu próximo ciclo de facturación.",
+      question2: "¿Qué pasa si pierdo una lección?",
+      answer2: "Puedes reprogramar lecciones hasta 24 horas antes del horario programado. Las lecciones no utilizadas se trasladan al mes siguiente para los planes Profesional y Empresa.",
+      question3: "¿Ofrecen reembolsos?",
+      answer3: "Ofrecemos una garantía de devolución de dinero de 14 días para todas las nuevas suscripciones. Si no estás satisfecho, contacta a nuestro equipo de soporte para un reembolso completo.",
+      question4: "¿Puedo probar antes de comprar?",
+      answer4: "¡Sí! Ofrecemos una lección de prueba gratuita de 30 minutos para que puedas experimentar nuestra plataforma y conocer a un tutor antes de comprometerte con un plan."
+    },
+    cta: {
+      title: "¿Listo para Comenzar a Aprender?",
+      subtitle: "Únete a miles de estudiantes mejorando sus habilidades en inglés con TopTalks",
+      trialButton: "Comenzar Prueba Gratuita",
+      demoButton: "Programar una Demo"
+    }
+  },
+  loginPage: {
+    logo: "TopTalks",
+    title: "Bienvenido de Nuevo",
+    subtitle: "Inicia sesión para continuar tu viaje de aprendizaje",
+    emailLabel: "Correo Electrónico",
+    emailPlaceholder: "tu@ejemplo.com",
+    passwordLabel: "Contraseña",
+    passwordPlaceholder: "Ingresa tu contraseña",
+    rememberMe: "Recuérdame",
+    forgotPassword: "¿Olvidaste tu contraseña?",
+    signInButton: "Iniciar Sesión",
+    orContinueWith: "O continuar con",
+    google: "Google",
+    facebook: "Facebook",
+    noAccount: "¿No tienes una cuenta?",
+    signUpLink: "Regístrate gratis"
+  },
+  aboutPage: {
+    hero: {
+      title1: "Derribando Barreras Lingüísticas,",
+      title2: " Una Conversación a la Vez",
+      subtitle: "TopTalks es la plataforma líder mundial que conecta a estudiantes de inglés con tutores expertos para lecciones personalizadas y uno a uno que se ajustan a tu horario y estilo de aprendizaje."
+    },
+    story: {
+      title: "Nuestra Historia",
+      paragraph1: "Fundada en 2020, TopTalks nació de una simple observación: la mejor manera de aprender un idioma es a través de conversaciones genuinas con personas reales. Los entornos de aula tradicionales y las aplicaciones universales no estaban dando a los estudiantes la atención personalizada que necesitaban para sobresalir verdaderamente.",
+      paragraph2: "Creamos TopTalks para cerrar esta brecha: una plataforma donde educadores apasionados y estudiantes motivados pudieran conectarse a través de fronteras y zonas horarias. Lo que comenzó como una pequeña comunidad de 50 tutores ha crecido hasta convertirse en una próspera red global de más de 1,000 profesionales certificados que enseñan a estudiantes en más de 120 países.",
+      paragraph3: "Hoy, estamos orgullosos de facilitar miles de conversaciones todos los días, ayudando a los estudiantes a alcanzar sus sueños, ya sea conseguir el trabajo de sus sueños, estudiar en el extranjero o simplemente conectarse con personas de todo el mundo."
+    },
+    mission: {
+      title: "Nuestra Misión y Valores",
+      missionTitle: "Nuestra Misión",
+      missionText: "Hacer que la educación de calidad en inglés sea accesible para todos, en todas partes, conectando a los estudiantes con el tutor perfecto para sus necesidades únicas.",
+      accessibility: "Accesibilidad Global",
+      accessibilityText: "Creemos que el aprendizaje de idiomas debe trascender fronteras, presupuestos y zonas horarias. Nuestra plataforma está disponible 24/7 con tutores de todo el mundo.",
+      quality: "Calidad Primero",
+      qualityText: "Cada tutor es examinado a fondo, certificado y evaluado continuamente para garantizar los más altos estándares de enseñanza y satisfacción del estudiante.",
+      personalization: "Aprendizaje Personalizado",
+      personalizationText: "Reconocemos que cada estudiante es único. Nuestra plataforma empodera a los estudiantes para encontrar tutores que coincidan con su estilo de aprendizaje, objetivos e intereses.",
+      community: "Comunidad Fuerte",
+      communityText: "Fomentamos una comunidad de apoyo donde los estudiantes y educadores pueden conectarse, compartir experiencias y crecer juntos.",
+      innovation: "Innovación Continua",
+      innovationText: "Estamos constantemente mejorando nuestra plataforma con nuevas funciones, mejores algoritmos de emparejamiento y herramientas de aprendizaje mejoradas."
+    },
+    stats: {
+      title: "TopTalks en Números",
+      tutors: "Tutores Certificados",
+      students: "Estudiantes Activos",
+      countries: "Países Atendidos",
+      rating: "Calificación Promedio"
+    },
+    different: {
+      title: "Lo Que Nos Hace Diferentes",
+      item1Title: "Selección Rigurosa de Tutores",
+      item1Text: "Aceptamos menos del 10% de los solicitantes de tutores. Cada uno se somete a verificación de credenciales, verificación de antecedentes, lecciones de demostración y monitoreo continuo del rendimiento.",
+      item2Title: "Tecnología de Emparejamiento Inteligente",
+      item2Text: "Nuestro algoritmo avanzado considera los objetivos de aprendizaje, la personalidad, el estilo de enseñanza y el horario para ayudarte a encontrar la pareja de tutor perfecta.",
+      item3Title: "Flexible y Asequible",
+      item3Text: "Sin suscripciones ni tarifas ocultas. Paga a medida que avanzas con tutores a varios precios. Cancela o reprograma lecciones con facilidad.",
+      item4Title: "Herramientas de Aprendizaje Integradas",
+      item4Text: "Videoconferencia integrada, pizarra interactiva, notas de lecciones, seguimiento de progreso y biblioteca de recursos, todo en una plataforma."
+    },
+    cta: {
+      title: "Únete a la Comunidad TopTalks Hoy",
+      subtitle: "Ya sea que busques aprender inglés o compartir tu experiencia como tutor, TopTalks es tu plataforma para conexiones significativas y resultados reales.",
+      studentButton: "Encuentra tu Tutor",
+      tutorButton: "Conviértete en Tutor"
+    }
+  },
+  startTeachingPage: {
+    hero: {
+      title: "Enseña e Inspira en Todo el Mundo",
+      subtitle: "Comparte tu experiencia con estudiantes de todo el mundo. Establece tu propio horario, tarifas y estilo de enseñanza mientras generas un impacto significativo.",
+      feature1Title: "Trabaja Desde Cualquier Lugar",
+      feature1Desc: "Enseña desde la comodidad de tu hogar o mientras viajas por el mundo",
+      feature2Title: "Establece Tu Propio Horario",
+      feature2Desc: "Elige cuándo quieres enseñar y cuántas horas trabajas",
+      feature3Title: "Gana Ingresos Competitivos",
+      feature3Desc: "Establece tus propias tarifas y conserva el 80% de tus ganancias",
+      applyButton: "Aplicar para Enseñar",
+      homeButton: "Volver al Inicio"
+    },
+    howItWorks: {
+      title: "Cómo Funciona",
+      subtitle: "Únete a nuestra comunidad de tutores en tres simples pasos",
+      step1Title: "Aplicar para Enseñar",
+      step1Desc: "Envía tu solicitud con tus credenciales y experiencia de enseñanza. La revisaremos en 48 horas",
+      step2Title: "Establece Tu Horario",
+      step2Desc: "Crea tu perfil, establece tus tarifas y elige tus horas de enseñanza disponibles",
+      step3Title: "Comienza a Enseñar",
+      step3Desc: "Conecta con estudiantes de todo el mundo y comienza a ganar mientras marcas la diferencia",
+      ctaButton: "Comienza Tu Solicitud"
+    },
+    requirements: {
+      title: "Lo Que Necesitas",
+      subtitle: "Requisitos básicos para convertirse en tutor de TopTalks",
+      req1Title: "Experiencia en Enseñanza",
+      req1Desc: "Al menos 1 año de experiencia en enseñanza o tutoría",
+      req2Title: "Dominio del Idioma",
+      req2Desc: "Dominio nativo o casi nativo de tu idioma de enseñanza",
+      req3Title: "Tecnología Confiable",
+      req3Desc: "Conexión a internet estable, cámara web y micrófono",
+      req4Title: "Pasión por la Enseñanza",
+      req4Desc: "Entusiasmo por ayudar a los estudiantes a alcanzar sus objetivos",
+      footer: "¿Listo para unirte a nuestra comunidad de educadores apasionados?",
+      ctaButton: "Aplicar Ahora"
+    }
+  },
+  studentServicesPage: {
+    hero: {
+      title: "Comienza Tu Viaje de Aprendizaje",
+      subtitle: "Conecta con tutores expertos adaptados a tu estilo de aprendizaje y objetivos. Obtén lecciones personalizadas que se ajusten a tu horario y presupuesto.",
+      feature1Title: "Elige Tu Tutor",
+      feature1Desc: "Explora perfiles, reseñas y especialidades para encontrar tu pareja perfecta",
+      feature2Title: "Programación Flexible",
+      feature2Desc: "Reserva lecciones en horarios que te funcionen, desde cualquier lugar del mundo",
+      feature3Title: "Precios Asequibles",
+      feature3Desc: "Educación de calidad accesible para todos con precios transparentes",
+      startButton: "Comenzar a Aprender",
+      homeButton: "Volver al Inicio"
+    },
+    howItWorks: {
+      title: "Cómo Funciona",
+      subtitle: "Comenzar es simple. Sigue estos tres sencillos pasos",
+      step1Title: "Crea Tu Perfil",
+      step1Desc: "Regístrate y cuéntanos sobre tus objetivos de aprendizaje, idiomas preferidos y horario",
+      step2Title: "Encuentra Tu Tutor",
+      step2Desc: "Explora nuestra comunidad de tutores certificados y reserva una lección de prueba con tu mejor opción",
+      step3Title: "Comienza a Aprender",
+      step3Desc: "Comienza tu viaje de aprendizaje personalizado y rastrea tu progreso en el camino",
+      ctaButton: "Comenzar a Aprender"
+    },
+    pricingPreview: {
+      title: "Precios Transparentes",
+      subtitle: "Elige entre opciones de precios flexibles que se adapten a tu presupuesto",
+      ctaButton: "Ver Todos los Planes de Precios"
+    }
+  },
+  navbar: {
+    home: "Inicio",
+    about: "Acerca de",
+    pricing: "Precios",
+    contact: "Contacto",
+    login: "Iniciar Sesión",
+    startLearning: "Comenzar a Aprender"
+  },
+  notFound: {
+    title: "Página No Encontrada",
+    subtitle: "Esta página aún no se ha creado.",
+    building: "¡Todavía estamos construyendo esta función! Vuelve pronto.",
+    redirecting: "Redirigiendo a la página de inicio en",
+    seconds: "segundos",
+    goHome: "Ir a la Página de Inicio Ahora"
   }
 };

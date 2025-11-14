@@ -134,6 +134,7 @@ export const en = {
     tagline: "Connect with expert tutors worldwide and master English through personalized learning.",
     quickLinks: "Quick Links",
     home: "Home",
+    about: "About",
     pricing: "Pricing",
     howItWorks: "How It Works",
     reviews: "Reviews",
@@ -279,5 +280,229 @@ export const en = {
       students: "Happy Students",
       rating: "Average Rating"
     }
+  },
+  pricingPage: {
+    hero: {
+      title: "Simple, Transparent Pricing",
+      subtitle: "Choose the perfect plan for your learning journey. All plans include access to our global network of certified tutors.",
+      monthly: "Monthly",
+      yearly: "Yearly",
+      saveLabel: "Save 20%"
+    },
+    plans: {
+      starter: {
+        name: "Starter",
+        price: "$19",
+        period: "/month",
+        description: "Perfect for beginners starting their language journey",
+        feature1: "4 lessons per month (30 minutes each)",
+        feature2: "Access to basic learning materials",
+        feature3: "Email support",
+        feature4: "Progress tracking dashboard",
+        feature5: "Schedule flexibility",
+        button: "Get Started"
+      },
+      professional: {
+        name: "Professional",
+        price: "$49",
+        period: "/month",
+        description: "Ideal for serious learners seeking consistent progress",
+        feature1: "12 lessons per month (30 minutes each)",
+        feature2: "Priority tutor matching",
+        feature3: "Access to premium learning materials",
+        feature4: "Homework and assignments",
+        feature5: "24/7 chat support",
+        feature6: "Recorded lesson playback",
+        feature7: "Customized learning path",
+        button: "Start Learning",
+        popular: "Most Popular"
+      },
+      enterprise: {
+        name: "Enterprise",
+        price: "$99",
+        period: "/month",
+        description: "For teams and organizations with specific needs",
+        feature1: "Unlimited lessons (30 minutes each)",
+        feature2: "Dedicated account manager",
+        feature3: "Custom curriculum development",
+        feature4: "Team progress analytics",
+        feature5: "Priority support 24/7",
+        feature6: "Multiple user accounts",
+        feature7: "Advanced reporting tools",
+        feature8: "Flexible scheduling options",
+        button: "Contact Sales"
+      }
+    },
+    faq: {
+      title: "Frequently Asked Questions",
+      question1: "Can I change my plan later?",
+      answer1: "Yes! You can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.",
+      question2: "What if I miss a lesson?",
+      answer2: "You can reschedule lessons up to 24 hours before the scheduled time. Unused lessons roll over to the next month for Professional and Enterprise plans.",
+      question3: "Do you offer refunds?",
+      answer3: "We offer a 14-day money-back guarantee for all new subscriptions. If you are not satisfied, contact our support team for a full refund.",
+      question4: "Can I try before I buy?",
+      answer4: "Yes! We offer a free 30-minute trial lesson so you can experience our platform and meet a tutor before committing to a plan."
+    },
+    cta: {
+      title: "Ready to Start Learning?",
+      subtitle: "Join thousands of students improving their English skills with TopTalks",
+      trialButton: "Start Free Trial",
+      demoButton: "Schedule a Demo"
+    }
+  },
+  loginPage: {
+    logo: "TopTalks",
+    title: "Welcome Back",
+    subtitle: "Sign in to continue your learning journey",
+    emailLabel: "Email Address",
+    emailPlaceholder: "you@example.com",
+    passwordLabel: "Password",
+    passwordPlaceholder: "Enter your password",
+    rememberMe: "Remember me",
+    forgotPassword: "Forgot password?",
+    signInButton: "Sign In",
+    orContinueWith: "Or continue with",
+    google: "Google",
+    facebook: "Facebook",
+    noAccount: "Don't have an account?",
+    signUpLink: "Sign up for free"
+  },
+  aboutPage: {
+    hero: {
+      title1: "Breaking Down Language Barriers,",
+      title2: " One Conversation at a Time",
+      subtitle: "TopTalks is the world's leading platform connecting English learners with expert tutors for personalized, one-on-one lessons that fit your schedule and learning style."
+    },
+    story: {
+      title: "Our Story",
+      paragraph1: "Founded in 2020, TopTalks was born from a simple observation: the best way to learn a language is through genuine conversation with real people. Traditional classroom settings and one-size-fits-all apps weren't giving learners the personalized attention they needed to truly excel.",
+      paragraph2: "We created TopTalks to bridge this gap—a platform where passionate educators and motivated learners could connect across borders and time zones. What started as a small community of 50 tutors has grown into a thriving global network of over 1,000 certified professionals teaching students in more than 120 countries.",
+      paragraph3: "Today, we're proud to facilitate thousands of conversations every day, helping students achieve their dreams—whether that's landing their dream job, studying abroad, or simply connecting with people around the world."
+    },
+    mission: {
+      title: "Our Mission & Values",
+      missionTitle: "Our Mission",
+      missionText: "To make quality English education accessible to everyone, everywhere, by connecting learners with the perfect tutor for their unique needs.",
+      accessibility: "Global Accessibility",
+      accessibilityText: "We believe language learning should transcend borders, budgets, and time zones. Our platform is available 24/7 with tutors from around the world.",
+      quality: "Quality First",
+      qualityText: "Every tutor is thoroughly vetted, certified, and continuously evaluated to ensure the highest teaching standards and student satisfaction.",
+      personalization: "Personalized Learning",
+      personalizationText: "We recognize that every learner is unique. Our platform empowers students to find tutors who match their learning style, goals, and interests.",
+      community: "Strong Community",
+      communityText: "We foster a supportive community where learners and educators can connect, share experiences, and grow together.",
+      innovation: "Continuous Innovation",
+      innovationText: "We're constantly improving our platform with new features, better matching algorithms, and enhanced learning tools."
+    },
+    stats: {
+      title: "TopTalks by the Numbers",
+      tutors: "Certified Tutors",
+      students: "Active Students",
+      countries: "Countries Served",
+      rating: "Average Rating"
+    },
+    different: {
+      title: "What Makes Us Different",
+      item1Title: "Rigorous Tutor Selection",
+      item1Text: "We accept less than 10% of tutor applicants. Each undergoes credential verification, background checks, demo lessons, and continuous performance monitoring.",
+      item2Title: "Smart Matching Technology",
+      item2Text: "Our advanced algorithm considers learning goals, personality, teaching style, and schedule to help you find the perfect tutor match.",
+      item3Title: "Flexible & Affordable",
+      item3Text: "No subscriptions or hidden fees. Pay as you go with tutors at various price points. Cancel or reschedule lessons with ease.",
+      item4Title: "Built-in Learning Tools",
+      item4Text: "Integrated video conferencing, interactive whiteboard, lesson notes, progress tracking, and resource library—all in one platform."
+    },
+    cta: {
+      title: "Join the TopTalks Community Today",
+      subtitle: "Whether you're looking to learn English or share your expertise as a tutor, TopTalks is your platform for meaningful connections and real results.",
+      studentButton: "Find Your Tutor",
+      tutorButton: "Become a Tutor"
+    }
+  },
+  startTeachingPage: {
+    hero: {
+      title: "Teach & Inspire Worldwide",
+      subtitle: "Share your expertise with students around the globe. Set your own schedule, rates, and teaching style while making a meaningful impact.",
+      feature1Title: "Work From Anywhere",
+      feature1Desc: "Teach from the comfort of your home or while traveling the world",
+      feature2Title: "Set Your Own Schedule",
+      feature2Desc: "Choose when you want to teach and how many hours you work",
+      feature3Title: "Earn Competitive Income",
+      feature3Desc: "Set your own rates and keep 80% of your earnings",
+      applyButton: "Apply to Teach",
+      homeButton: "Back to Home"
+    },
+    howItWorks: {
+      title: "How It Works",
+      subtitle: "Join our community of tutors in three simple steps",
+      step1Title: "Apply to Teach",
+      step1Desc: "Submit your application with your teaching credentials and experience. We'll review it within 48 hours",
+      step2Title: "Set Your Schedule",
+      step2Desc: "Create your profile, set your rates, and choose your available teaching hours",
+      step3Title: "Start Teaching",
+      step3Desc: "Connect with students worldwide and start earning while making a difference",
+      ctaButton: "Start Your Application"
+    },
+    requirements: {
+      title: "What You Need",
+      subtitle: "Basic requirements to become a TopTalks tutor",
+      req1Title: "Teaching Experience",
+      req1Desc: "At least 1 year of teaching or tutoring experience",
+      req2Title: "Language Proficiency",
+      req2Desc: "Native or near-native proficiency in your teaching language",
+      req3Title: "Reliable Technology",
+      req3Desc: "Stable internet connection, webcam, and microphone",
+      req4Title: "Passion for Teaching",
+      req4Desc: "Enthusiasm for helping students achieve their goals",
+      footer: "Ready to join our community of passionate educators?",
+      ctaButton: "Apply Now"
+    }
+  },
+  studentServicesPage: {
+    hero: {
+      title: "Start Your Learning Journey",
+      subtitle: "Connect with expert tutors tailored to your learning style and goals. Get personalized lessons that fit your schedule and budget.",
+      feature1Title: "Choose Your Tutor",
+      feature1Desc: "Browse profiles, reviews, and specialties to find your perfect match",
+      feature2Title: "Flexible Scheduling",
+      feature2Desc: "Book lessons at times that work for you, from anywhere in the world",
+      feature3Title: "Affordable Pricing",
+      feature3Desc: "Quality education accessible to everyone with transparent pricing",
+      startButton: "Start Learning",
+      homeButton: "Back to Home"
+    },
+    howItWorks: {
+      title: "How It Works",
+      subtitle: "Getting started is simple. Follow these three easy steps",
+      step1Title: "Create Your Profile",
+      step1Desc: "Sign up and tell us about your learning goals, preferred languages, and schedule",
+      step2Title: "Find Your Tutor",
+      step2Desc: "Browse our community of certified tutors and book a trial lesson with your top choice",
+      step3Title: "Start Learning",
+      step3Desc: "Begin your personalized learning journey and track your progress along the way",
+      ctaButton: "Start Learning"
+    },
+    pricingPreview: {
+      title: "Transparent Pricing",
+      subtitle: "Choose from flexible pricing options that suit your budget",
+      ctaButton: "View All Pricing Plans"
+    }
+  },
+  navbar: {
+    home: "Home",
+    about: "About",
+    pricing: "Pricing",
+    contact: "Contact",
+    login: "Login",
+    startLearning: "Start Learning"
+  },
+  notFound: {
+    title: "Page Not Found",
+    subtitle: "This page is not created yet.",
+    building: "We're still building this feature! Check back soon.",
+    redirecting: "Redirecting to homepage in",
+    seconds: "seconds",
+    goHome: "Go to Homepage Now"
   }
 };
