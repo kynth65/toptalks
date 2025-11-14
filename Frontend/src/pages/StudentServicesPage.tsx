@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
 import Navbar from '../components/common/Navbar';
 import Button from '../components/common/Button';
 import Footer from '../components/common/Footer';
 
 const StudentServicesPage: React.FC = () => {
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen bg-cream">
@@ -24,10 +26,10 @@ const StudentServicesPage: React.FC = () => {
             {/* Left Column - Text Content */}
             <div className="space-y-6 animate-fade-in-up">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight">
-                Start Your Learning Journey
+                {t.studentServicesPage.hero.title}
               </h1>
               <p className="text-xl text-gray max-w-xl">
-                Connect with expert tutors tailored to your learning style and goals. Get personalized lessons that fit your schedule and budget.
+                {t.studentServicesPage.hero.subtitle}
               </p>
 
               {/* Features List */}
@@ -39,8 +41,8 @@ const StudentServicesPage: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-navy text-lg">Choose Your Tutor</h3>
-                    <p className="text-gray">Browse profiles, reviews, and specialties to find your perfect match</p>
+                    <h3 className="font-semibold text-navy text-lg">{t.studentServicesPage.hero.feature1Title}</h3>
+                    <p className="text-gray">{t.studentServicesPage.hero.feature1Desc}</p>
                   </div>
                 </div>
 
@@ -51,8 +53,8 @@ const StudentServicesPage: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-navy text-lg">Flexible Scheduling</h3>
-                    <p className="text-gray">Book lessons at times that work for you, from anywhere in the world</p>
+                    <h3 className="font-semibold text-navy text-lg">{t.studentServicesPage.hero.feature2Title}</h3>
+                    <p className="text-gray">{t.studentServicesPage.hero.feature2Desc}</p>
                   </div>
                 </div>
 
@@ -63,8 +65,8 @@ const StudentServicesPage: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-navy text-lg">Affordable Pricing</h3>
-                    <p className="text-gray">Quality education accessible to everyone with transparent pricing</p>
+                    <h3 className="font-semibold text-navy text-lg">{t.studentServicesPage.hero.feature3Title}</h3>
+                    <p className="text-gray">{t.studentServicesPage.hero.feature3Desc}</p>
                   </div>
                 </div>
               </div>
@@ -73,12 +75,12 @@ const StudentServicesPage: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link to="/start-learning">
                   <Button size="lg">
-                    Start Learning
+                    {t.studentServicesPage.hero.startButton}
                   </Button>
                 </Link>
                 <Link to="/">
                   <Button size="lg" variant="outline">
-                    Back to Home
+                    {t.studentServicesPage.hero.homeButton}
                   </Button>
                 </Link>
               </div>
@@ -103,10 +105,10 @@ const StudentServicesPage: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">
-              How It Works
+              {t.studentServicesPage.howItWorks.title}
             </h2>
             <p className="text-xl text-gray max-w-2xl mx-auto">
-              Getting started is simple. Follow these three easy steps
+              {t.studentServicesPage.howItWorks.subtitle}
             </p>
           </div>
 
@@ -116,9 +118,9 @@ const StudentServicesPage: React.FC = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-mint rounded-full text-white text-2xl font-bold">
                 1
               </div>
-              <h3 className="text-2xl font-bold text-navy">Create Your Profile</h3>
+              <h3 className="text-2xl font-bold text-navy">{t.studentServicesPage.howItWorks.step1Title}</h3>
               <p className="text-gray">
-                Sign up and tell us about your learning goals, preferred languages, and schedule
+                {t.studentServicesPage.howItWorks.step1Desc}
               </p>
             </div>
 
@@ -127,9 +129,9 @@ const StudentServicesPage: React.FC = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-coral rounded-full text-white text-2xl font-bold">
                 2
               </div>
-              <h3 className="text-2xl font-bold text-navy">Find Your Tutor</h3>
+              <h3 className="text-2xl font-bold text-navy">{t.studentServicesPage.howItWorks.step2Title}</h3>
               <p className="text-gray">
-                Browse our community of certified tutors and book a trial lesson with your top choice
+                {t.studentServicesPage.howItWorks.step2Desc}
               </p>
             </div>
 
@@ -138,9 +140,9 @@ const StudentServicesPage: React.FC = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-sky rounded-full text-white text-2xl font-bold">
                 3
               </div>
-              <h3 className="text-2xl font-bold text-navy">Start Learning</h3>
+              <h3 className="text-2xl font-bold text-navy">{t.studentServicesPage.howItWorks.step3Title}</h3>
               <p className="text-gray">
-                Begin your personalized learning journey and track your progress along the way
+                {t.studentServicesPage.howItWorks.step3Desc}
               </p>
             </div>
           </div>
@@ -148,7 +150,7 @@ const StudentServicesPage: React.FC = () => {
           <div className="text-center mt-12">
             <Link to="/start-learning">
               <Button size="lg">
-                Start Learning
+                {t.studentServicesPage.howItWorks.ctaButton}
               </Button>
             </Link>
           </div>
@@ -159,14 +161,14 @@ const StudentServicesPage: React.FC = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">
-            Transparent Pricing
+            {t.studentServicesPage.pricingPreview.title}
           </h2>
           <p className="text-xl text-gray max-w-2xl mx-auto mb-8">
-            Choose from flexible pricing options that suit your budget
+            {t.studentServicesPage.pricingPreview.subtitle}
           </p>
           <Link to="/pricing">
             <Button size="lg" variant="outline">
-              View All Pricing Plans
+              {t.studentServicesPage.pricingPreview.ctaButton}
             </Button>
           </Link>
         </div>
