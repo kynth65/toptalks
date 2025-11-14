@@ -236,7 +236,7 @@ const Navbar: React.FC = () => {
                       onClick={() => handleLanguageChange(lang.code)}
                       className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm transition-colors ${
                         selectedLanguage === lang.code
-                          ? "bg-coral text-white"
+                          ? "bg-coral text-navy"
                           : "bg-white text-gray hover:bg-cream"
                       }`}
                     >
