@@ -8,6 +8,8 @@ import StartTeachingPage from './pages/StartTeachingPage'
 import TutorApplicationPage from './pages/TutorApplicationPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
+import FindTutorsPage from './pages/FindTutorsPage'
+import TutorResultsPage from './pages/TutorResultsPage'
 import NotFoundPage from './pages/NotFoundPage'
 import { LanguageProvider } from './contexts/LanguageContext'
 import ScrollToTop from './components/common/ScrollToTop'
@@ -27,6 +29,8 @@ function App() {
           <Route path="/start-learning" element={<StartLearningPage />} />
           <Route path="/start-teaching" element={<StartTeachingPage />} />
           <Route path="/apply-tutor" element={<TutorApplicationPage />} />
+          <Route path="/find-tutors" element={<FindTutorsPage />} />
+          <Route path="/tutor-results" element={<TutorResultsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
