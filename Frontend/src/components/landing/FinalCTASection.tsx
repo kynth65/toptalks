@@ -16,7 +16,7 @@ const FinalCTASection: React.FC = () => {
           Whether you're looking to learn English or share your expertise as a tutor, TopTalks is your platform for meaningful connections and real results.
         </p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <Link to="/student-services">
+          <Link to="/find-tutors">
             <Button size="lg">Find Your Tutor</Button>
           </Link>
           <Link to="/start-teaching">

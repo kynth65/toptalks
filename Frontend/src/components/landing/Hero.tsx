@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link to="/student-services">
+              <Link to="/find-tutors">
                 <Button size="lg">{t.hero.cta_student}</Button>
               </Link>
               <Link to="/start-teaching">

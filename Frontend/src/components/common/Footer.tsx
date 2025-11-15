@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               <li>
                 <Link
-                  to="/student-services"
+                  to="/find-tutors"
                   className="text-cream/70 hover:text-mint transition-colors duration-200 text-sm inline-block"
                 >
                   {t.footer.studentServices}

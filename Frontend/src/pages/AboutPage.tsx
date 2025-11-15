@@ -215,7 +215,7 @@ const AboutPage: React.FC = () => {
             {t.aboutPage.cta.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link to="/student-services">
+            <Link to="/find-tutors">
               <Button size="lg">{t.aboutPage.cta.studentButton}</Button>
             </Link>
             <Link to="/start-teaching">
