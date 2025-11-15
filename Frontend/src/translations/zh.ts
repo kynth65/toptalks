@@ -517,5 +517,131 @@ export const zh = {
     redirecting: "将在以下时间后重定向到主页",
     seconds: "秒",
     goHome: "立即前往主页"
+  },
+  findTutors: {
+    heading: "找到您的完美导师",
+    subheading: "回答几个问题，帮助我们为您匹配最适合您需求的导师",
+    step: "步骤",
+    of: "共",
+    next: "下一步",
+    back: "返回",
+    submit: "查找导师",
+    showAll: "显示所有导师",
+    step1: {
+      title: "您想学习什么科目？",
+      placeholder: "选择或输入科目/语言",
+      english: "英语",
+      spanish: "西班牙语",
+      french: "法语",
+      german: "德语",
+      chinese: "中文（普通话）",
+      japanese: "日语",
+      korean: "韩语",
+      tagalog: "他加禄语",
+      mathematics: "数学",
+      science: "科学",
+      programming: "编程"
+    },
+    step2: {
+      title: "您的目标是什么？",
+      careerBusiness: "职业和商业",
+      lessonsForKids: "儿童课程",
+      examsCoursework: "考试和课程作业",
+      cultureTravel: "文化、旅行和爱好"
+    },
+    step3: {
+      title: "您想在什么时候实现这个目标？",
+      oneToFourWeeks: "1-4周",
+      oneToThreeMonths: "1-3个月",
+      threeToSixMonths: "3-6个月",
+      asLongAsItTakes: "需要多长时间都可以"
+    },
+    step4: {
+      title: "您想专注于哪些主题？",
+      noPreference: "无偏好",
+      beginnerLevel: "初级水平",
+      conversational: "会话",
+      businessProfessional: "商务/专业",
+      examPreparation: "考试准备",
+      grammar: "语法",
+      pronunciation: "发音"
+    },
+    step5: {
+      title: "孩子的{subject}水平是多少？",
+      justStarting: "刚开始",
+      knowsBasics: "了解基础",
+      conversational: "会话",
+      fluent: "流利"
+    },
+    step6: {
+      title: "您希望导师来自哪个国家？",
+      nativeSpeakersOnly: "仅母语人士",
+      anyCountry: "任何国家",
+      philippines: "菲律宾",
+      canada: "加拿大",
+      usa: "美国",
+      uk: "英国",
+      australia: "澳大利亚",
+      newZealand: "新西兰",
+      ireland: "爱尔兰",
+      southAfrica: "南非"
+    },
+    step7: {
+      title: "您希望导师会说其他什么语言吗？",
+      noPreference: "无偏好",
+      english: "英语",
+      spanish: "西班牙语",
+      chinese: "中文",
+      korean: "韩语",
+      japanese: "日语",
+      tagalog: "他加禄语"
+    },
+    step8: {
+      title: "{you}什么时候可以上课？",
+      you: "您",
+      theChild: "孩子",
+      selectDays: "选择日期",
+      selectTimes: "选择时间段",
+      sunday: "星期日",
+      monday: "星期一",
+      tuesday: "星期二",
+      wednesday: "星期三",
+      thursday: "星期四",
+      friday: "星期五",
+      saturday: "星期六",
+      morning: "上午（6AM - 12PM）",
+      afternoon: "下午（12PM - 6PM）",
+      evening: "晚上（6PM - 10PM）",
+      night: "深夜（10PM - 6AM）"
+    },
+    step9: {
+      title: "您的预算是多少？",
+      subtitle: "每小时价格",
+      perHour: "/小时",
+      range: "${min} - ${max}+"
+    },
+    results: {
+      title: "为您推荐的完美导师",
+      subtitle: "我们找到了{count}位符合您偏好的导师",
+      noResults: "未找到导师",
+      noResultsMessage: "尝试调整您的筛选条件以查找更多导师",
+      tutorCard: {
+        from: "来自",
+        speaks: "会说",
+        teaches: "教授",
+        perHour: "/小时",
+        students: "学生",
+        lessons: "课程",
+        rating: "评分",
+        bookLesson: "预订课程",
+        viewProfile: "查看个人资料",
+        specialties: "专业领域"
+      },
+      filters: {
+        title: "优化搜索",
+        reset: "重置筛选",
+        apply: "应用筛选"
+      }
+    }
   }
 };

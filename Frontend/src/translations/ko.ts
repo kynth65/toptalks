@@ -504,5 +504,131 @@ export const ko = {
     redirecting: "다음 시간 후 홈페이지로 리디렉션됩니다",
     seconds: "초",
     goHome: "지금 홈페이지로 이동"
+  },
+  findTutors: {
+    heading: "완벽한 튜터 찾기",
+    subheading: "몇 가지 질문에 답하여 귀하의 요구에 가장 적합한 튜터를 매칭해 드립니다",
+    step: "단계",
+    of: "중",
+    next: "다음",
+    back: "뒤로",
+    submit: "튜터 찾기",
+    showAll: "모든 튜터 보기",
+    step1: {
+      title: "어떤 과목을 배우고 싶으신가요?",
+      placeholder: "과목/언어를 선택하거나 입력하세요",
+      english: "영어",
+      spanish: "스페인어",
+      french: "프랑스어",
+      german: "독일어",
+      chinese: "중국어(북경어)",
+      japanese: "일본어",
+      korean: "한국어",
+      tagalog: "타갈로그어",
+      mathematics: "수학",
+      science: "과학",
+      programming: "프로그래밍"
+    },
+    step2: {
+      title: "목표가 무엇인가요?",
+      careerBusiness: "직업과 비즈니스",
+      lessonsForKids: "어린이 레슨",
+      examsCoursework: "시험 및 과제",
+      cultureTravel: "문화, 여행 및 취미"
+    },
+    step3: {
+      title: "언제까지 이 목표를 달성하고 싶으신가요?",
+      oneToFourWeeks: "1-4주",
+      oneToThreeMonths: "1-3개월",
+      threeToSixMonths: "3-6개월",
+      asLongAsItTakes: "필요한 만큼"
+    },
+    step4: {
+      title: "어떤 주제에 집중하고 싶으신가요?",
+      noPreference: "선호 없음",
+      beginnerLevel: "초급 레벨",
+      conversational: "회화",
+      businessProfessional: "비즈니스/전문",
+      examPreparation: "시험 준비",
+      grammar: "문법",
+      pronunciation: "발음"
+    },
+    step5: {
+      title: "아이의 {subject} 수준은 어떻습니까?",
+      justStarting: "막 시작함",
+      knowsBasics: "기초를 알고 있음",
+      conversational: "회화",
+      fluent: "유창함"
+    },
+    step6: {
+      title: "튜터가 어느 나라 출신이기를 원하시나요?",
+      nativeSpeakersOnly: "원어민만",
+      anyCountry: "모든 국가",
+      philippines: "필리핀",
+      canada: "캐나다",
+      usa: "미국",
+      uk: "영국",
+      australia: "호주",
+      newZealand: "뉴질랜드",
+      ireland: "아일랜드",
+      southAfrica: "남아프리카"
+    },
+    step7: {
+      title: "튜터가 다른 어떤 언어를 구사하길 원하시나요?",
+      noPreference: "선호 없음",
+      english: "영어",
+      spanish: "스페인어",
+      chinese: "중국어",
+      korean: "한국어",
+      japanese: "일본어",
+      tagalog: "타갈로그어"
+    },
+    step8: {
+      title: "{you}는 언제 수업을 들을 수 있나요?",
+      you: "귀하",
+      theChild: "아이",
+      selectDays: "요일 선택",
+      selectTimes: "시간대 선택",
+      sunday: "일요일",
+      monday: "월요일",
+      tuesday: "화요일",
+      wednesday: "수요일",
+      thursday: "목요일",
+      friday: "금요일",
+      saturday: "토요일",
+      morning: "오전 (6AM - 12PM)",
+      afternoon: "오후 (12PM - 6PM)",
+      evening: "저녁 (6PM - 10PM)",
+      night: "밤 (10PM - 6AM)"
+    },
+    step9: {
+      title: "예산은 얼마인가요?",
+      subtitle: "시간당 가격",
+      perHour: "/시간",
+      range: "${min} - ${max}+"
+    },
+    results: {
+      title: "귀하를 위한 완벽한 튜터",
+      subtitle: "귀하의 선호도에 맞는 {count}명의 튜터를 찾았습니다",
+      noResults: "튜터를 찾을 수 없습니다",
+      noResultsMessage: "더 많은 튜터를 찾으려면 필터를 조정해 보세요",
+      tutorCard: {
+        from: "출신",
+        speaks: "구사 언어",
+        teaches: "가르침",
+        perHour: "/시간",
+        students: "학생",
+        lessons: "레슨",
+        rating: "평점",
+        bookLesson: "레슨 예약",
+        viewProfile: "프로필 보기",
+        specialties: "전문 분야"
+      },
+      filters: {
+        title: "검색 세분화",
+        reset: "필터 재설정",
+        apply: "필터 적용"
+      }
+    }
   }
 };

@@ -504,5 +504,131 @@ export const en = {
     redirecting: "Redirecting to homepage in",
     seconds: "seconds",
     goHome: "Go to Homepage Now"
+  },
+  findTutors: {
+    heading: "Find Your Perfect Tutor",
+    subheading: "Answer a few questions to help us match you with the best tutor for your needs",
+    step: "Step",
+    of: "of",
+    next: "Next",
+    back: "Back",
+    submit: "Find Tutors",
+    showAll: "Show All Tutors",
+    step1: {
+      title: "What subject do you want to learn?",
+      placeholder: "Select or type a subject/language",
+      english: "English",
+      spanish: "Spanish",
+      french: "French",
+      german: "German",
+      chinese: "Chinese (Mandarin)",
+      japanese: "Japanese",
+      korean: "Korean",
+      tagalog: "Tagalog",
+      mathematics: "Mathematics",
+      science: "Science",
+      programming: "Programming"
+    },
+    step2: {
+      title: "What's your goal?",
+      careerBusiness: "Career and business",
+      lessonsForKids: "Lessons for kids",
+      examsCoursework: "Exams and coursework",
+      cultureTravel: "Culture, travel and hobby"
+    },
+    step3: {
+      title: "By when do you want to achieve this goal?",
+      oneToFourWeeks: "1-4 weeks",
+      oneToThreeMonths: "1-3 months",
+      threeToSixMonths: "3-6 months",
+      asLongAsItTakes: "As long as it takes"
+    },
+    step4: {
+      title: "Which topics do you want to focus on?",
+      noPreference: "No preference",
+      beginnerLevel: "Beginner level",
+      conversational: "Conversational",
+      businessProfessional: "Business/Professional",
+      examPreparation: "Exam preparation",
+      grammar: "Grammar",
+      pronunciation: "Pronunciation"
+    },
+    step5: {
+      title: "What's the child's {subject} level?",
+      justStarting: "Just starting",
+      knowsBasics: "Knows the basics",
+      conversational: "Conversational",
+      fluent: "Fluent"
+    },
+    step6: {
+      title: "What country would you like your tutor to be from?",
+      nativeSpeakersOnly: "Native speakers only",
+      anyCountry: "Any country",
+      philippines: "Philippines",
+      canada: "Canada",
+      usa: "United States",
+      uk: "United Kingdom",
+      australia: "Australia",
+      newZealand: "New Zealand",
+      ireland: "Ireland",
+      southAfrica: "South Africa"
+    },
+    step7: {
+      title: "Any other languages you'd like your tutor to speak?",
+      noPreference: "No preference",
+      english: "English",
+      spanish: "Spanish",
+      chinese: "Chinese",
+      korean: "Korean",
+      japanese: "Japanese",
+      tagalog: "Tagalog"
+    },
+    step8: {
+      title: "When can {you} take lessons?",
+      you: "you",
+      theChild: "the child",
+      selectDays: "Select days",
+      selectTimes: "Select times of day",
+      sunday: "Sunday",
+      monday: "Monday",
+      tuesday: "Tuesday",
+      wednesday: "Wednesday",
+      thursday: "Thursday",
+      friday: "Friday",
+      saturday: "Saturday",
+      morning: "Morning (6AM - 12PM)",
+      afternoon: "Afternoon (12PM - 6PM)",
+      evening: "Evening (6PM - 10PM)",
+      night: "Night (10PM - 6AM)"
+    },
+    step9: {
+      title: "What's your budget?",
+      subtitle: "Price per hour",
+      perHour: "/hour",
+      range: "${min} - ${max}+"
+    },
+    results: {
+      title: "Perfect Tutors for You",
+      subtitle: "We found {count} tutors matching your preferences",
+      noResults: "No tutors found",
+      noResultsMessage: "Try adjusting your filters to find more tutors",
+      tutorCard: {
+        from: "From",
+        speaks: "Speaks",
+        teaches: "Teaches",
+        perHour: "/hour",
+        students: "students",
+        lessons: "lessons",
+        rating: "Rating",
+        bookLesson: "Book Lesson",
+        viewProfile: "View Profile",
+        specialties: "Specialties"
+      },
+      filters: {
+        title: "Refine Search",
+        reset: "Reset Filters",
+        apply: "Apply Filters"
+      }
+    }
   }
 };

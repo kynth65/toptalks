@@ -504,5 +504,131 @@ export const es = {
     redirecting: "Redirigiendo a la página de inicio en",
     seconds: "segundos",
     goHome: "Ir a la Página de Inicio Ahora"
+  },
+  findTutors: {
+    heading: "Encuentra Tu Tutor Perfecto",
+    subheading: "Responde algunas preguntas para ayudarnos a emparejarte con el mejor tutor para tus necesidades",
+    step: "Paso",
+    of: "de",
+    next: "Siguiente",
+    back: "Atrás",
+    submit: "Encontrar Tutores",
+    showAll: "Mostrar Todos los Tutores",
+    step1: {
+      title: "¿Qué materia quieres aprender?",
+      placeholder: "Selecciona o escribe una materia/idioma",
+      english: "Inglés",
+      spanish: "Español",
+      french: "Francés",
+      german: "Alemán",
+      chinese: "Chino (Mandarín)",
+      japanese: "Japonés",
+      korean: "Coreano",
+      tagalog: "Tagalo",
+      mathematics: "Matemáticas",
+      science: "Ciencias",
+      programming: "Programación"
+    },
+    step2: {
+      title: "¿Cuál es tu objetivo?",
+      careerBusiness: "Carrera y negocios",
+      lessonsForKids: "Lecciones para niños",
+      examsCoursework: "Exámenes y trabajos del curso",
+      cultureTravel: "Cultura, viaje y pasatiempo"
+    },
+    step3: {
+      title: "¿Para cuándo quieres lograr este objetivo?",
+      oneToFourWeeks: "1-4 semanas",
+      oneToThreeMonths: "1-3 meses",
+      threeToSixMonths: "3-6 meses",
+      asLongAsItTakes: "El tiempo que sea necesario"
+    },
+    step4: {
+      title: "¿En qué temas quieres enfocarte?",
+      noPreference: "Sin preferencia",
+      beginnerLevel: "Nivel principiante",
+      conversational: "Conversacional",
+      businessProfessional: "Negocios/Profesional",
+      examPreparation: "Preparación de exámenes",
+      grammar: "Gramática",
+      pronunciation: "Pronunciación"
+    },
+    step5: {
+      title: "¿Cuál es el nivel de {subject} del niño?",
+      justStarting: "Recién comenzando",
+      knowsBasics: "Conoce lo básico",
+      conversational: "Conversacional",
+      fluent: "Fluido"
+    },
+    step6: {
+      title: "¿De qué país te gustaría que fuera tu tutor?",
+      nativeSpeakersOnly: "Solo hablantes nativos",
+      anyCountry: "Cualquier país",
+      philippines: "Filipinas",
+      canada: "Canadá",
+      usa: "Estados Unidos",
+      uk: "Reino Unido",
+      australia: "Australia",
+      newZealand: "Nueva Zelanda",
+      ireland: "Irlanda",
+      southAfrica: "Sudáfrica"
+    },
+    step7: {
+      title: "¿Qué otros idiomas te gustaría que hablara tu tutor?",
+      noPreference: "Sin preferencia",
+      english: "Inglés",
+      spanish: "Español",
+      chinese: "Chino",
+      korean: "Coreano",
+      japanese: "Japonés",
+      tagalog: "Tagalo"
+    },
+    step8: {
+      title: "¿Cuándo puede {you} tomar lecciones?",
+      you: "usted",
+      theChild: "el niño",
+      selectDays: "Seleccionar días",
+      selectTimes: "Seleccionar horas del día",
+      sunday: "Domingo",
+      monday: "Lunes",
+      tuesday: "Martes",
+      wednesday: "Miércoles",
+      thursday: "Jueves",
+      friday: "Viernes",
+      saturday: "Sábado",
+      morning: "Mañana (6AM - 12PM)",
+      afternoon: "Tarde (12PM - 6PM)",
+      evening: "Noche (6PM - 10PM)",
+      night: "Madrugada (10PM - 6AM)"
+    },
+    step9: {
+      title: "¿Cuál es tu presupuesto?",
+      subtitle: "Precio por hora",
+      perHour: "/hora",
+      range: "${min} - ${max}+"
+    },
+    results: {
+      title: "Tutores Perfectos para Ti",
+      subtitle: "Encontramos {count} tutores que coinciden con tus preferencias",
+      noResults: "No se encontraron tutores",
+      noResultsMessage: "Intenta ajustar tus filtros para encontrar más tutores",
+      tutorCard: {
+        from: "De",
+        speaks: "Habla",
+        teaches: "Enseña",
+        perHour: "/hora",
+        students: "estudiantes",
+        lessons: "lecciones",
+        rating: "Calificación",
+        bookLesson: "Reservar Lección",
+        viewProfile: "Ver Perfil",
+        specialties: "Especialidades"
+      },
+      filters: {
+        title: "Refinar Búsqueda",
+        reset: "Restablecer Filtros",
+        apply: "Aplicar Filtros"
+      }
+    }
   }
 };
