@@ -1,107 +1,82 @@
 import React, { useState } from "react";
 import { useLanguage } from "../../contexts/LanguageContext";
 
-// ============================================
-// FAQ SECTION
-// ============================================
 const FAQSection: React.FC = () => {
   const { t } = useLanguage();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  const faqs = [
-    {
-      id: 1,
-      question: t.faq.questions.whatIsPlatform.question,
-      answer: t.faq.questions.whatIsPlatform.answer,
-    },
-    {
-      id: 2,
-      question: t.faq.questions.howMuchCost.question,
-      answer: t.faq.questions.howMuchCost.answer,
-    },
-    {
-      id: 3,
-      question: t.faq.questions.becomeTeacher.question,
-      answer: t.faq.questions.becomeTeacher.answer,
-    },
-    {
-      id: 4,
-      question: t.faq.questions.safetyQuality.question,
-      answer: t.faq.questions.safetyQuality.answer,
-    },
-    {
-      id: 5,
-      question: t.faq.questions.cancelReschedule.question,
-      answer: t.faq.questions.cancelReschedule.answer,
-    },
-    {
-      id: 6,
-      question: t.faq.questions.freeTrialDemo.question,
-      answer: t.faq.questions.freeTrialDemo.answer,
-    },
-  ];
+  // Helper to convert object into array for mapping
+  const faqList = Object.values(t.faq.questions);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="py-20 md:py-28 lg:py-40 px-4 sm:px-6 lg:px-8 bg-cream relative overflow-hidden">
-      {/* Decorative Background Elements */}
-      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-rose-100/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none" />
+    <section className="py-24 bg-cream relative">
+      {/* Background Blob */}
+      <div className="absolute left-0 top-1/3 w-96 h-96 bg-coral/5 rounded-full blur-3xl -translate-x-1/2 pointer-events-none"></div>
 
-      <div className="max-w-4xl mx-auto relative z-10">
-        {/* Section Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-navy mb-4">
             {t.faq.title}
           </h2>
-          <p className="text-xl text-gray">{t.faq.subtitle}</p>
+          <p className="text-lg text-gray">{t.faq.subtitle}</p>
         </div>
 
-        {/* FAQ Accordion */}
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
+        <div className="space-y-6">
+          {faqList.map((faq: any, index: number) => (
             <div
-              key={faq.id}
-              className="bg-white rounded-[1.5rem] shadow-md hover:shadow-lg transition-all duration-300"
+              key={index}
+              className={`bg-white rounded-[2rem] transition-all duration-300 overflow-hidden ${
+                openIndex === index
+                  ? "shadow-xl scale-[1.01]"
+                  : "shadow-sm hover:shadow-md"
+              }`}
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                aria-expanded={openIndex === index}
-                aria-controls={`faq-answer-${faq.id}`}
-                className="w-full text-left p-6 flex justify-between items-center gap-4 focus:outline-none focus:ring-2 focus:ring-coral focus:ring-offset-2 rounded-[1.5rem]"
+                className="w-full text-left p-6 md:p-8 flex justify-between items-center focus:outline-none"
               >
-                <h3 className="text-lg font-semibold text-navy pr-4">
-                  {faq.question}
-                </h3>
-                <svg
-                  className={`w-6 h-6 text-coral flex-shrink-0 transition-transform duration-300 ${
-                    openIndex === index ? 'rotate-180' : ''
+                <span
+                  className={`text-lg font-semibold transition-colors ${
+                    openIndex === index ? "text-navy" : "text-gray-700"
                   }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              {openIndex === index && (
+                  {faq.question}
+                </span>
                 <div
-                  id={`faq-answer-${faq.id}`}
-                  role="region"
-                  className="px-6 pb-6 text-gray leading-relaxed animate-fade-in"
+                  className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                    openIndex === index
+                      ? "bg-navy text-white rotate-180"
+                      : "bg-cream text-navy"
+                  }`}
                 >
-                  {faq.answer}
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
                 </div>
-              )}
+              </button>
+              <div
+                className={`px-6 md:px-8 overflow-hidden transition-all duration-300 ease-in-out ${
+                  openIndex === index
+                    ? "max-h-48 pb-8 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <p className="text-gray leading-relaxed">{faq.answer}</p>
+              </div>
             </div>
           ))}
         </div>
