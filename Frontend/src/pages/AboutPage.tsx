@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import Button from "../components/common/Button";
+import aboutHero from "../assets/images/about.jpg";
+import about2 from "../assets/images/about-2.jpg";
+import about3 from "../assets/images/about-3.jpg";
 
 const AboutPage: React.FC = () => {
   return (
@@ -38,7 +41,7 @@ const AboutPage: React.FC = () => {
               <div className="absolute inset-0 bg-coral/10 blur-3xl rounded-full transform translate-x-10 translate-y-10"></div>
               <div className="relative aspect-[4/5] md:aspect-square rounded-[3rem] overflow-hidden shadow-2xl shadow-navy/10 border border-white/50">
                 <img
-                  src="/src/assets/images/about.jpg"
+                  src={aboutHero}
                   alt="Students connecting"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
                 />
@@ -61,7 +64,7 @@ const AboutPage: React.FC = () => {
                   <div className="space-y-4 md:space-y-6 mt-12">
                     <div className="aspect-[3/4] rounded-[2rem] overflow-hidden shadow-lg bg-white">
                       <img
-                        src="/src/assets/images/about-2.jpg"
+                        src={about2}
                         className="w-full h-full object-cover"
                         alt="Learning moment"
                       />
@@ -70,7 +73,7 @@ const AboutPage: React.FC = () => {
                   <div className="space-y-4 md:space-y-6">
                     <div className="aspect-[3/4] rounded-[2rem] overflow-hidden shadow-lg bg-white">
                       <img
-                        src="/src/assets/images/about-3.jpg"
+                        src={about3}
                         className="w-full h-full object-cover"
                         alt="Teaching moment"
                       />
