@@ -328,15 +328,6 @@ const TutorResultsPage = () => {
                       <option value="tagalog">
                         {t.findTutors.step1.tagalog}
                       </option>
-                      <option value="mathematics">
-                        {t.findTutors.step1.mathematics}
-                      </option>
-                      <option value="science">
-                        {t.findTutors.step1.science}
-                      </option>
-                      <option value="programming">
-                        {t.findTutors.step1.programming}
-                      </option>
                     </select>
                   </div>
 

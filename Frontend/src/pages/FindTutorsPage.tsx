@@ -162,9 +162,6 @@ const FindTutorsPage = () => {
                   "japanese",
                   "korean",
                   "tagalog",
-                  "mathematics",
-                  "science",
-                  "programming",
                 ].map((subject) => (
                   <button
                     key={subject}
