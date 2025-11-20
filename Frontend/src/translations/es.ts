@@ -27,10 +27,25 @@ export const es = {
     subheading: "Comienza en tres simples pasos",
     step1Title: "Crea Tu Perfil",
     step1Desc: "Regístrate y cuéntanos sobre tus objetivos y preferencias de aprendizaje.",
+    step1Details: [
+      "Completa tu perfil en menos de 5 minutos",
+      "Comparte tus objetivos de aprendizaje y horario",
+      "Cuéntanos tu estilo de enseñanza preferido"
+    ],
     step2Title: "Encuentra Tu Tutor",
     step2Desc: "Explora tutores certificados y elige el que mejor se adapte a tus necesidades.",
+    step2Details: [
+      "Explora tutores verificados y experimentados",
+      "Lee reseñas de otros estudiantes",
+      "Compara calificaciones y métodos de enseñanza"
+    ],
     step3Title: "Comienza a Aprender",
-    step3Desc: "Programa tu primera lección y comienza tu camino hacia la fluidez."
+    step3Desc: "Programa tu primera lección y comienza tu camino hacia la fluidez.",
+    step3Details: [
+      "Reserva una lección de prueba a tu conveniencia",
+      "Conéctate por video con nuestra plataforma fácil de usar",
+      "Rastrea tu progreso con retroalimentación personalizada"
+    ]
   },
   testimonials: {
     heading: "Lo Que Dicen Nuestros Estudiantes",

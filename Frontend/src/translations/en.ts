@@ -27,10 +27,25 @@ export const en = {
     subheading: "Get started in three simple steps",
     step1Title: "Create Your Profile",
     step1Desc: "Sign up and tell us about your learning goals and preferences.",
+    step1Details: [
+      "Complete your profile in under 5 minutes",
+      "Share your learning objectives and schedule",
+      "Tell us your preferred teaching style"
+    ],
     step2Title: "Find Your Tutor",
     step2Desc: "Browse certified tutors and choose the perfect match for your needs.",
+    step2Details: [
+      "Browse verified, experienced tutors",
+      "Read reviews from other students",
+      "Compare qualifications and teaching methods"
+    ],
     step3Title: "Start Learning",
-    step3Desc: "Schedule your first lesson and begin your journey to fluency."
+    step3Desc: "Schedule your first lesson and begin your journey to fluency.",
+    step3Details: [
+      "Book a trial lesson at your convenience",
+      "Connect via video with our easy-to-use platform",
+      "Track your progress with personalized feedback"
+    ]
   },
   testimonials: {
     heading: "What Our Students Say",

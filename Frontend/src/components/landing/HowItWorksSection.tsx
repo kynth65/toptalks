@@ -1,83 +1,78 @@
-import React from 'react';
-import { useLanguage } from '../../contexts/LanguageContext';
-import howItWorks1 from '../../assets/images/how-it-works.jpg';
-import howItWorks2 from '../../assets/images/how-it-works-2.jpg';
-import howItWorks3 from '../../assets/images/how-it-works-3.jpg';
+import React from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
+import howItWorks1 from "../../assets/images/how-it-works.jpg";
+import howItWorks2 from "../../assets/images/how-it-works-2.jpg";
+import howItWorks3 from "../../assets/images/how-it-works-3.jpg";
 
-// ============================================
-// HOW IT WORKS SECTION
-// ============================================
 const HowItWorksSection: React.FC = () => {
   const { t } = useLanguage();
 
   const steps = [
     {
       id: 1,
+      title: t.howItWorks.step1Title,
+      description: t.howItWorks.step1Desc,
+      details: t.howItWorks.step1Details,
       image: howItWorks1,
-      title: t.howItWorks?.step1Title || 'Create Your Profile',
-      description: t.howItWorks?.step1Desc || 'Sign up and tell us about your learning goals and preferences.',
-      bgColor: 'bg-coral/20',
-      textColor: 'text-navy',
+      bgColor: "bg-coral/20", // Pinkish tone
     },
     {
       id: 2,
+      title: t.howItWorks.step2Title,
+      description: t.howItWorks.step2Desc,
+      details: t.howItWorks.step2Details,
       image: howItWorks2,
-      title: t.howItWorks?.step2Title || 'Find Your Tutor',
-      description: t.howItWorks?.step2Desc || 'Browse certified tutors and choose the perfect match for your needs.',
-      bgColor: 'bg-mint/30',
-      textColor: 'text-navy',
+      bgColor: "bg-mint/20", // Greenish tone
     },
     {
       id: 3,
+      title: t.howItWorks.step3Title,
+      description: t.howItWorks.step3Desc,
+      details: t.howItWorks.step3Details,
       image: howItWorks3,
-      title: t.howItWorks?.step3Title || 'Start Learning',
-      description: t.howItWorks?.step3Desc || 'Schedule your first lesson and begin your journey to fluency.',
-      bgColor: 'bg-sky/30',
-      textColor: 'text-navy',
+      bgColor: "bg-sky/20", // Blueish tone
     },
   ];
 
   return (
-    <section id="how-it-works" className="py-20 md:py-28 lg:py-40 bg-white relative overflow-hidden">
-      {/* Decorative Background Elements */}
-      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-rose-100/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none" />
+    <section className="py-24 bg-cream relative overflow-hidden">
+      {/* Soft gradient to separate visually without lines */}
+      <div className="absolute inset-0 bg-gradient-to-b from-cream via-white/50 to-cream pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">
-            {t.howItWorks?.heading || 'How It Works'}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-navy mb-4">
+            {t.howItWorks.heading}
           </h2>
           <p className="text-xl text-gray max-w-2xl mx-auto">
-            {t.howItWorks?.subheading || 'Get started in three simple steps'}
+            {t.howItWorks.subheading}
           </p>
         </div>
 
-        {/* Steps Grid */}
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-          {steps.map((step) => (
-            <div
-              key={step.id}
-              className={`${step.bgColor} p-6 rounded-[1.5rem] shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer`}
-            >
-              {/* Image */}
-              <div className="mb-6 overflow-hidden rounded-[1.5rem]">
-                <img
-                  src={step.image}
-                  alt={step.title}
-                  className="w-full h-64 object-cover"
-                />
-              </div>
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+          {steps.map((step, index) => (
+            <div key={step.id} className="h-full">
+              <div
+                className={`${step.bgColor} p-6 lg:p-8 xl:p-10 rounded-[2rem] transition-all duration-500 h-full flex flex-col hover:scale-[1.02] hover:shadow-xl cursor-default`}
+              >
+                {/* Image Container */}
+                <div className="relative mb-6 lg:mb-8 overflow-hidden rounded-[1.5rem] aspect-[4/3]  shadow-sm bg-white/40">
+                  <img
+                    src={step.image}
+                    alt={step.title}
+                    className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
 
-              {/* Content */}
-              <div className="text-left">
-                <h3 className={`text-2xl font-bold ${step.textColor} mb-4`}>
-                  {step.title}
-                </h3>
-                <p className={`${step.textColor} leading-relaxed opacity-80`}>
-                  {step.description}
-                </p>
+                {/* Content */}
+                <div className="flex flex-col flex-grow">
+                  <h3 className="text-2xl lg:text-2xl font-serif font-bold text-navy mb-3 lg:mb-4">
+                    {step.title}
+                  </h3>
+                  <p className="text-navy/80 text-base lg:text-lg leading-relaxed font-medium">
+                    {step.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
