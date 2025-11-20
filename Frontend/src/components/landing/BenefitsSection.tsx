@@ -6,6 +6,7 @@ import teachingVideo from "../../assets/videos/teaching-video.mp4";
 const BenefitsSection: React.FC = () => {
   const { t } = useLanguage();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const videoContainerRef = useRef<HTMLDivElement>(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
 
@@ -69,14 +70,14 @@ const BenefitsSection: React.FC = () => {
       }
     );
 
-    const videoContainer = videoRef.current?.parentElement;
-    if (videoContainer) {
-      observer.observe(videoContainer);
+    const container = videoContainerRef.current;
+    if (container) {
+      observer.observe(container);
     }
 
     return () => {
-      if (videoContainer) {
-        observer.unobserve(videoContainer);
+      if (container) {
+        observer.unobserve(container);
       }
     };
   }, [shouldLoadVideo]);
@@ -124,7 +125,7 @@ const BenefitsSection: React.FC = () => {
               possible.
             </p>
 
-            <div className="relative w-full aspect-video rounded-[2rem] overflow-hidden shadow-xl shadow-navy/5 group bg-navy/5">
+            <div ref={videoContainerRef} className="relative w-full aspect-video rounded-[2rem] overflow-hidden shadow-xl shadow-navy/5 group bg-navy/5">
               {/* Loading placeholder */}
               {!isVideoLoaded && (
                 <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-coral/10 to-sky/10 animate-pulse">
