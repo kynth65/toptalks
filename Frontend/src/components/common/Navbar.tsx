@@ -7,6 +7,7 @@ import type { Language } from "../../translations";
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const languageDropdownRef = useRef<HTMLDivElement>(null);
   const { language: selectedLanguage, setLanguage } = useLanguage();
   const navigate = useNavigate();
@@ -17,9 +18,7 @@ const Navbar: React.FC = () => {
     { name: "About", path: "/about", sectionId: null },
     { name: "Find Tutor", path: "/find-tutors", sectionId: null },
     { name: "Apply", path: "/start-teaching", sectionId: null },
-    { name: "Contact", path: "/contact", sectionId: null },
-    // Commented out - Tutors show their own pricing
-    // { name: "Pricing", path: "/pricing", sectionId: null },
+    { name: "Contact", path: "/contact", sectionId: "contact" },
   ];
 
   const languages = [
@@ -29,6 +28,15 @@ const Navbar: React.FC = () => {
     { code: "es", name: "Español", flag: "🇪🇸" },
   ];
 
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const handleLanguageChange = (languageCode: string) => {
     setLanguage(languageCode as Language);
     setIsLanguageDropdownOpen(false);
@@ -36,16 +44,15 @@ const Navbar: React.FC = () => {
 
   const scrollToSection = (sectionId: string | null) => {
     if (!sectionId) return;
-
     const element = document.getElementById(sectionId);
     if (element) {
-      const navbarHeight = 80; // Height of fixed navbar
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const navbarHeight = 80;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - navbarHeight;
-
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   };
@@ -56,27 +63,18 @@ const Navbar: React.FC = () => {
   ) => {
     e.preventDefault();
     setIsMenuOpen(false);
-
-    // If link has a section ID and we're already on the target page
     if (link.sectionId && location.pathname === link.path) {
       scrollToSection(link.sectionId);
-    }
-    // If link has a section ID but we're on a different page
-    else if (link.sectionId && location.pathname !== link.path) {
+    } else if (link.sectionId && location.pathname !== link.path) {
       navigate(link.path);
-      // Wait for navigation to complete before scrolling
-      setTimeout(() => {
-        scrollToSection(link.sectionId);
-      }, 100);
-    }
-    // If it's just a regular page navigation
-    else {
+      setTimeout(() => scrollToSection(link.sectionId), 100);
+    } else {
       navigate(link.path);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
-  // Close language dropdown when clicking outside
+  // Close dropdowns on click outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -86,26 +84,27 @@ const Navbar: React.FC = () => {
         setIsLanguageDropdownOpen(false);
       }
     };
-
-    if (isLanguageDropdownOpen) {
+    if (isLanguageDropdownOpen)
       document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isLanguageDropdownOpen]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-cream/95 backdrop-blur-sm z-50 shadow-sm">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-cream/90 backdrop-blur-md shadow-sm py-2"
+          : "bg-transparent py-4"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <Link to="/">
-              <h1 className="text-2xl md:text-3xl font-bold text-navy cursor-pointer">
+          <div className="flex items-center flex-shrink-0">
+            <Link to="/" className="group">
+              <h1 className="text-2xl md:text-3xl font-serif font-bold text-navy cursor-pointer tracking-tight">
                 TopTalks
-                <span className="inline-flex ml-1 gap-1">
+                <span className="inline-flex ml-1 gap-1 transform group-hover:scale-110 transition-transform">
                   <span className="w-2 h-2 rounded-full bg-mint"></span>
                   <span className="w-2 h-2 rounded-full bg-coral"></span>
                 </span>
@@ -114,40 +113,34 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.sectionId ? `#${link.sectionId}` : link.path}
                 onClick={(e) => handleNavClick(e, link)}
-                className="text-gray hover:text-navy transition-colors duration-200 text-sm font-medium cursor-pointer"
+                className="text-navy/70 hover:text-navy transition-colors duration-200 text-sm font-medium cursor-pointer hover:underline decoration-mint decoration-2 underline-offset-4"
               >
                 {link.name}
               </a>
             ))}
 
-            {/* Language Selector Dropdown */}
+            {/* Language Selector */}
             <div className="relative" ref={languageDropdownRef}>
               <button
                 onClick={() =>
                   setIsLanguageDropdownOpen(!isLanguageDropdownOpen)
                 }
-                className="flex items-center space-x-2 text-gray hover:text-navy transition-colors duration-200 text-sm font-medium px-3 py-2 rounded-md hover:bg-cream-dark"
+                className="flex items-center space-x-2 text-navy/70 hover:text-navy transition-colors duration-200 text-sm font-medium px-3 py-2 rounded-full hover:bg-white/50"
               >
-                <span>
+                <span className="text-lg">
                   {
                     languages.find((lang) => lang.code === selectedLanguage)
                       ?.flag
                   }
                 </span>
-                <span>
-                  {
-                    languages.find((lang) => lang.code === selectedLanguage)
-                      ?.name
-                  }
-                </span>
                 <svg
-                  className={`w-4 h-4 transition-transform ${
+                  className={`w-4 h-4 transition-transform duration-200 ${
                     isLanguageDropdownOpen ? "rotate-180" : ""
                   }`}
                   fill="none"
@@ -164,18 +157,18 @@ const Navbar: React.FC = () => {
               </button>
 
               {isLanguageDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50">
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-2xl shadow-xl border border-cream-dark py-2 overflow-hidden animate-fade-in-up">
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
                       onClick={() => handleLanguageChange(lang.code)}
-                      className={`w-full flex items-center space-x-3 px-4 py-2 text-sm hover:bg-cream transition-colors ${
+                      className={`w-full flex items-center space-x-3 px-4 py-3 text-sm hover:bg-cream transition-colors ${
                         selectedLanguage === lang.code
-                          ? "bg-cream text-navy font-medium"
+                          ? "bg-cream text-navy font-semibold"
                           : "text-gray"
                       }`}
                     >
-                      <span>{lang.flag}</span>
+                      <span className="text-lg">{lang.flag}</span>
                       <span>{lang.name}</span>
                     </button>
                   ))}
@@ -185,7 +178,7 @@ const Navbar: React.FC = () => {
 
             {/* Login Button */}
             <Link to="/login">
-              <Button size="sm" variant="outline">
+              <Button size="sm" variant="primary">
                 Login
               </Button>
             </Link>
@@ -194,7 +187,7 @@ const Navbar: React.FC = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-md text-gray hover:text-navy focus:outline-none"
+            className="lg:hidden p-2 rounded-md text-navy focus:outline-none"
           >
             <svg
               className="h-6 w-6"
@@ -216,31 +209,32 @@ const Navbar: React.FC = () => {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="lg:hidden pb-4 animate-fade-in">
+          <div className="lg:hidden py-4 bg-white/95 backdrop-blur-md rounded-2xl mt-2 shadow-xl animate-fade-in px-4">
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.sectionId ? `#${link.sectionId}` : link.path}
                   onClick={(e) => handleNavClick(e, link)}
-                  className="text-gray hover:text-navy transition-colors duration-200 text-sm font-medium cursor-pointer"
+                  className="text-navy hover:text-coral transition-colors duration-200 text-base font-medium py-2 border-b border-cream-dark"
                 >
                   {link.name}
                 </a>
               ))}
 
-              {/* Mobile Language Selector */}
-              <div className="border-t border-gray-200 pt-4">
-                <p className="text-xs text-gray mb-2 font-medium">Language</p>
-                <div className="grid grid-cols-2 gap-2">
+              <div className="pt-2">
+                <p className="text-xs text-gray mb-2 font-medium uppercase tracking-wider">
+                  Language
+                </p>
+                <div className="flex flex-wrap gap-2">
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
                       onClick={() => handleLanguageChange(lang.code)}
-                      className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm transition-colors ${
+                      className={`flex items-center space-x-2 px-3 py-2 rounded-full text-sm transition-colors ${
                         selectedLanguage === lang.code
-                          ? "bg-coral text-navy"
-                          : "bg-white text-gray hover:bg-cream"
+                          ? "bg-navy text-white"
+                          : "bg-cream text-gray hover:bg-cream-dark"
                       }`}
                     >
                       <span>{lang.flag}</span>
@@ -250,9 +244,8 @@ const Navbar: React.FC = () => {
                 </div>
               </div>
 
-              {/* Mobile Login Button */}
-              <Link to="/login" className="block">
-                <Button size="sm" variant="outline" className="w-full">
+              <Link to="/login" className="block pt-2">
+                <Button size="md" variant="primary" className="w-full">
                   Login
                 </Button>
               </Link>
