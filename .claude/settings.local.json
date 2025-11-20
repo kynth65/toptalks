@@ -12,7 +12,9 @@
       "Bash(git reset:*)",
       "mcp__ide__getDiagnostics",
       "Bash(cat:*)",
-      "Bash(test:*)"
+      "Bash(test:*)",
+      "Bash(nul)",
+      "Bash(dir:*)"
     ],
     "deny": [],
     "ask": []
