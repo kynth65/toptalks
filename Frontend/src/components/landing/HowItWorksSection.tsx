@@ -50,7 +50,7 @@ const HowItWorksSection: React.FC = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {steps.map((step, index) => (
+          {steps.map((step) => (
             <div key={step.id} className="h-full">
               <div
                 className={`${step.bgColor} p-6 lg:p-8 xl:p-10 rounded-[2rem] transition-all duration-500 h-full flex flex-col hover:scale-[1.02] hover:shadow-xl cursor-default`}
