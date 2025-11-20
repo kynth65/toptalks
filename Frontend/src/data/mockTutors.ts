@@ -196,13 +196,13 @@ export const mockTutors: Tutor[] = [
     country: "usa",
     isNativeSpeaker: true,
     languages: ["english", "spanish"],
-    subjects: ["english", "spanish", "programming"],
+    subjects: ["english", "spanish"],
     specialties: ["conversational", "businessProfessional"],
     hourlyRate: 24,
     rating: 4.7,
     totalStudents: 142,
     totalLessons: 670,
-    bio: "Tech professional turned language teacher. Great for those in the tech industry!",
+    bio: "Business professional turned language teacher. Specializing in professional communication!",
     availability: {
       days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
       times: ["evening", "night"]
@@ -406,13 +406,13 @@ export const mockTutors: Tutor[] = [
     country: "usa",
     isNativeSpeaker: true,
     languages: ["english"],
-    subjects: ["english", "programming"],
+    subjects: ["english"],
     specialties: ["businessProfessional", "conversational"],
     hourlyRate: 26,
     rating: 4.7,
     totalStudents: 149,
     totalLessons: 745,
-    bio: "Tech industry professional offering practical business English for the modern workplace!",
+    bio: "Business communication specialist offering practical English for the modern workplace!",
     availability: {
       days: ["tuesday", "thursday", "friday", "saturday"],
       times: ["evening", "night"]
@@ -931,13 +931,13 @@ export const mockTutors: Tutor[] = [
     country: "japan",
     isNativeSpeaker: false,
     languages: ["japanese", "english"],
-    subjects: ["japanese", "programming"],
+    subjects: ["japanese"],
     specialties: ["businessProfessional", "grammar", "examPreparation"],
     hourlyRate: 32,
     rating: 5.0,
     totalStudents: 245,
     totalLessons: 1680,
-    bio: "JLPT specialist and former software engineer teaching business Japanese!",
+    bio: "JLPT specialist and business Japanese expert with years of corporate experience!",
     availability: {
       days: ["monday", "wednesday", "thursday", "friday"],
       times: ["evening", "night"]
