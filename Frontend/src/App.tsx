@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import LandingPage from './pages/LandingPage'
-import PricingPage from './pages/PricingPage'
+// Commented out - Tutors show their own pricing
+// import PricingPage from './pages/PricingPage'
 import LoginPage from './pages/LoginPage'
 import StudentServicesPage from './pages/StudentServicesPage'
 import StartLearningPage from './pages/StartLearningPage'
@@ -22,7 +23,8 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/pricing" element={<PricingPage />} />
+          {/* Commented out - Tutors show their own pricing */}
+          {/* <Route path="/pricing" element={<PricingPage />} /> */}
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/student-services" element={<StudentServicesPage />} />

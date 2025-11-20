@@ -157,8 +157,8 @@ const StudentServicesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Pricing Preview Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      {/* Pricing Preview Section - Commented out - Tutors show their own pricing */}
+      {/* <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">
             {t.studentServicesPage.pricingPreview.title}
@@ -172,7 +172,7 @@ const StudentServicesPage: React.FC = () => {
             </Button>
           </Link>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>

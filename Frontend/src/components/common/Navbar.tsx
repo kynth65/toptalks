@@ -18,7 +18,8 @@ const Navbar: React.FC = () => {
     { name: "Find Tutor", path: "/find-tutors", sectionId: null },
     { name: "Apply", path: "/start-teaching", sectionId: null },
     { name: "Contact", path: "/contact", sectionId: null },
-    { name: "Pricing", path: "/pricing", sectionId: null },
+    // Commented out - Tutors show their own pricing
+    // { name: "Pricing", path: "/pricing", sectionId: null },
   ];
 
   const languages = [

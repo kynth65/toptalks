@@ -45,14 +45,15 @@ const Footer: React.FC = () => {
                   {t.footer.about}
                 </Link>
               </li>
-              <li>
+              {/* Commented out - Tutors show their own pricing */}
+              {/* <li>
                 <Link
                   to="/pricing"
                   className="text-cream/70 hover:text-mint transition-colors duration-200 text-sm inline-block"
                 >
                   {t.footer.pricing}
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   to="/how-it-works"
