@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useLanguage } from "../../contexts/LanguageContext";
 import { Rocket, Zap, Target, Gem, Lock, TrendingUp } from "lucide-react";
+import teachingVideo from "../../assets/videos/teaching-video.mp4";
 
 const BenefitsSection: React.FC = () => {
   const { t } = useLanguage();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
 
   const benefits = [
     {
@@ -50,6 +54,61 @@ const BenefitsSection: React.FC = () => {
     },
   ];
 
+  // Intersection Observer for lazy loading
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !shouldLoadVideo) {
+            setShouldLoadVideo(true);
+          }
+        });
+      },
+      {
+        rootMargin: "100px", // Start loading 100px before component is visible
+      }
+    );
+
+    const videoContainer = videoRef.current?.parentElement;
+    if (videoContainer) {
+      observer.observe(videoContainer);
+    }
+
+    return () => {
+      if (videoContainer) {
+        observer.unobserve(videoContainer);
+      }
+    };
+  }, [shouldLoadVideo]);
+
+  // Handle video playback once loaded
+  useEffect(() => {
+    if (shouldLoadVideo && videoRef.current) {
+      const video = videoRef.current;
+
+      // Handle video loaded event
+      const handleLoadedData = () => {
+        setIsVideoLoaded(true);
+      };
+
+      video.addEventListener("loadeddata", handleLoadedData);
+
+      // Load and play the video
+      video.load();
+
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          console.log("Autoplay was prevented:", error);
+        });
+      }
+
+      return () => {
+        video.removeEventListener("loadeddata", handleLoadedData);
+      };
+    }
+  }, [shouldLoadVideo]);
+
   return (
     <section className="py-24 bg-cream relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,19 +124,52 @@ const BenefitsSection: React.FC = () => {
               possible.
             </p>
 
-            <div className="relative w-full aspect-video rounded-[2rem] overflow-hidden shadow-xl shadow-navy/5 group">
-              <video
-                className="w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-              >
-                <source
-                  src="/src/assets/videos/teaching-video.mp4"
-                  type="video/mp4"
-                />
-              </video>
+            <div className="relative w-full aspect-video rounded-[2rem] overflow-hidden shadow-xl shadow-navy/5 group bg-navy/5">
+              {/* Loading placeholder */}
+              {!isVideoLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-coral/10 to-sky/10 animate-pulse">
+                  <div className="text-navy/20">
+                    <svg
+                      className="w-16 h-16 animate-spin"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      />
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              )}
+
+              {shouldLoadVideo && (
+                <video
+                  ref={videoRef}
+                  className={`w-full h-full object-cover transition-opacity duration-500 ${
+                    isVideoLoaded ? "opacity-100" : "opacity-0"
+                  }`}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="none"
+                >
+                  <source src={teachingVideo} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              )}
+
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/10 to-transparent pointer-events-none" />
             </div>
           </div>
 
