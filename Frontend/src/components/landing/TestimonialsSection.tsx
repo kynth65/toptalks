@@ -41,7 +41,10 @@ const TestimonialsSection: React.FC = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-20 md:py-28 lg:py-40 bg-white relative overflow-hidden">
+    <section
+      id="testimonials"
+      className="py-20 md:py-28 lg:py-40 bg-white relative overflow-hidden"
+    >
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-rose-100/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none" />
