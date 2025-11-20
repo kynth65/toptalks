@@ -1,340 +1,167 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useLanguage } from "../contexts/LanguageContext";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import Button from "../components/common/Button";
 
 const AboutPage: React.FC = () => {
-  const { t } = useLanguage();
-
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-cream font-sans selection:bg-coral selection:text-white">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="pt-40 pb-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-8 leading-tight">
-            {t.aboutPage.hero.title1}
-            <span className="text-coral">{t.aboutPage.hero.title2}</span>
-          </h1>
-          <p className="text-lg md:text-xl text-gray max-w-3xl mx-auto leading-relaxed">
-            {t.aboutPage.hero.subtitle}
-          </p>
+      {/* HERO SECTION */}
+      <section className="pt-32 lg:pt-44 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-navy/5 text-navy font-medium text-sm mb-8 shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-coral animate-pulse"></span>
+                Our Mission
+              </div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-navy leading-[1.1] mb-6">
+                Connecting worlds through{" "}
+                <span className="text-coral italic">language.</span>
+              </h1>
+              <p className="text-xl text-gray leading-relaxed mb-8 max-w-lg">
+                We believe fluency is more than just vocabulary. It's about
+                connection, culture, and the confidence to speak up.
+              </p>
+              <Link to="/find-tutors">
+                <Button size="lg" variant="primary">
+                  Start Your Journey
+                </Button>
+              </Link>
+            </div>
+
+            {/* Large Hero Image */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-coral/10 blur-3xl rounded-full transform translate-x-10 translate-y-10"></div>
+              <div className="relative aspect-[4/5] md:aspect-square rounded-[3rem] overflow-hidden shadow-2xl shadow-navy/10 border border-white/50">
+                <img
+                  src="/src/assets/images/about.jpg"
+                  alt="Students connecting"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Our Story Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-12 text-center">
-            {t.aboutPage.story.title}
-          </h2>
-          <div className="prose prose-lg max-w-none text-gray">
-            <p className="mb-8 text-lg leading-relaxed">
-              {t.aboutPage.story.paragraph1}
+      {/* OUR STORY - Immersive Container */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-cream rounded-[3rem] p-8 md:p-16 lg:p-20 relative overflow-hidden">
+            {/* Background Decoration */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-mint/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+
+            <div className="flex flex-col lg:flex-row gap-16 relative z-10 items-center">
+              <div className="lg:w-1/2">
+                <div className="grid grid-cols-2 gap-4 md:gap-6">
+                  <div className="space-y-4 md:space-y-6 mt-12">
+                    <div className="aspect-[3/4] rounded-[2rem] overflow-hidden shadow-lg bg-white">
+                      <img
+                        src="/src/assets/images/about-2.jpg"
+                        className="w-full h-full object-cover"
+                        alt="Learning moment"
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-4 md:space-y-6">
+                    <div className="aspect-[3/4] rounded-[2rem] overflow-hidden shadow-lg bg-white">
+                      <img
+                        src="/src/assets/images/about-3.jpg"
+                        className="w-full h-full object-cover"
+                        alt="Teaching moment"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:w-1/2 space-y-8">
+                <h2 className="text-3xl md:text-5xl font-serif font-bold text-navy leading-tight">
+                  From a classroom idea to a{" "}
+                  <span className="text-mint">global community.</span>
+                </h2>
+                <div className="space-y-6 text-lg text-gray/90 leading-relaxed">
+                  <p>
+                    TopTalks started in 2023 with a simple question: Why is
+                    learning a language so lonely? We wanted to change that by
+                    putting human connection at the center of the experience.
+                  </p>
+                  <p>
+                    Today, we are a thriving network of learners and educators
+                    from 120+ countries, united by the belief that understanding
+                    each other is the first step to a better world.
+                  </p>
+                </div>
+
+                <div className="flex gap-12 pt-4">
+                  <div>
+                    <div className="text-4xl font-serif font-bold text-navy">
+                      10k+
+                    </div>
+                    <div className="text-sm text-gray font-medium uppercase tracking-wider mt-1">
+                      Students
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-4xl font-serif font-bold text-navy">
+                      120+
+                    </div>
+                    <div className="text-sm text-gray font-medium uppercase tracking-wider mt-1">
+                      Countries
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* VALUES SECTION - Concise Cards */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-cream">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-navy mb-6">
+              What Drives Us
+            </h2>
+            <p className="text-xl text-gray max-w-2xl mx-auto">
+              Our core values shape every lesson, every connection, and every
+              line of code.
             </p>
-            <p className="mb-8 text-lg leading-relaxed">
-              {t.aboutPage.story.paragraph2}
-            </p>
-            <p className="text-lg leading-relaxed">
-              {t.aboutPage.story.paragraph3}
-            </p>
           </div>
-        </div>
-      </section>
 
-      {/* Our Mission & Values */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-16 text-center">
-            {t.aboutPage.mission.title}
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {/* Mission */}
-            <div className="bg-white rounded-2xl p-10 shadow-md transition-all duration-300 hover:shadow-xl">
-              <div className="w-14 h-14 bg-mint rounded-full flex items-center justify-center mb-6">
-                <svg
-                  className="w-7 h-7 text-navy"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-navy mb-4">
-                {t.aboutPage.mission.missionTitle}
-              </h3>
-              <p className="text-gray text-base leading-relaxed">
-                {t.aboutPage.mission.missionText}
-              </p>
-            </div>
-
-            {/* Accessibility */}
-            <div className="bg-white rounded-2xl p-10 shadow-md transition-all duration-300 hover:shadow-xl">
-              <div className="w-14 h-14 bg-coral rounded-full flex items-center justify-center mb-6">
-                <svg
-                  className="w-7 h-7 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-navy mb-4">
-                {t.aboutPage.mission.accessibility}
-              </h3>
-              <p className="text-gray text-base leading-relaxed">
-                {t.aboutPage.mission.accessibilityText}
-              </p>
-            </div>
-
-            {/* Quality */}
-            <div className="bg-white rounded-2xl p-10 shadow-md transition-all duration-300 hover:shadow-xl">
-              <div className="w-14 h-14 bg-mint rounded-full flex items-center justify-center mb-6">
-                <svg
-                  className="w-7 h-7 text-navy"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-navy mb-4">
-                {t.aboutPage.mission.quality}
-              </h3>
-              <p className="text-gray text-base leading-relaxed">
-                {t.aboutPage.mission.qualityText}
-              </p>
-            </div>
-
-            {/* Personalization */}
-            <div className="bg-white rounded-2xl p-10 shadow-md transition-all duration-300 hover:shadow-xl">
-              <div className="w-14 h-14 bg-coral rounded-full flex items-center justify-center mb-6">
-                <svg
-                  className="w-7 h-7 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-navy mb-4">
-                {t.aboutPage.mission.personalization}
-              </h3>
-              <p className="text-gray text-base leading-relaxed">
-                {t.aboutPage.mission.personalizationText}
-              </p>
-            </div>
-
-            {/* Community */}
-            <div className="bg-white rounded-2xl p-10 shadow-md transition-all duration-300 hover:shadow-xl">
-              <div className="w-14 h-14 bg-mint rounded-full flex items-center justify-center mb-6">
-                <svg
-                  className="w-7 h-7 text-navy"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-navy mb-4">
-                {t.aboutPage.mission.community}
-              </h3>
-              <p className="text-gray text-base leading-relaxed">
-                {t.aboutPage.mission.communityText}
-              </p>
-            </div>
-
-            {/* Innovation */}
-            <div className="bg-white rounded-2xl p-10 shadow-md transition-all duration-300 hover:shadow-xl">
-              <div className="w-14 h-14 bg-coral rounded-full flex items-center justify-center mb-6">
-                <svg
-                  className="w-7 h-7 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-navy mb-4">
-                {t.aboutPage.mission.innovation}
-              </h3>
-              <p className="text-gray text-base leading-relaxed">
-                {t.aboutPage.mission.innovationText}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* By The Numbers */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-navy text-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-20 text-center">
-            {t.aboutPage.stats.title}
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16">
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-mint mb-4">
-                1,000+
-              </div>
-              <div className="text-cream text-sm md:text-base lg:text-lg">
-                {t.aboutPage.stats.tutors}
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-coral mb-4">
-                10,000+
-              </div>
-              <div className="text-cream text-sm md:text-base lg:text-lg">
-                {t.aboutPage.stats.students}
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-mint mb-4">
-                120+
-              </div>
-              <div className="text-cream text-sm md:text-base lg:text-lg">
-                {t.aboutPage.stats.countries}
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-coral mb-4">
-                4.9/5
-              </div>
-              <div className="text-cream text-sm md:text-base lg:text-lg">
-                {t.aboutPage.stats.rating}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What Makes Us Different */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-16 text-center">
-            {t.aboutPage.different.title}
-          </h2>
-
-          <div className="space-y-12">
-            <div className="flex items-start gap-6">
-              <div className="flex-shrink-0 w-10 h-10 bg-mint rounded-full flex items-center justify-center text-navy font-bold text-lg">
-                1
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-navy mb-3">
-                  {t.aboutPage.different.item1Title}
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {[
+              {
+                title: "Quality First",
+                desc: "We rigorously vet every tutor to ensure you learn from the best.",
+                color: "bg-white",
+              },
+              {
+                title: "Inclusivity",
+                desc: "Education is for everyone. We keep learning accessible and affordable.",
+                color: "bg-white",
+              },
+              {
+                title: "Growth",
+                desc: "We celebrate every milestone, from your first word to fluency.",
+                color: "bg-white",
+              },
+            ].map((card, idx) => (
+              <div
+                key={idx}
+                className={`${card.color} p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-navy/5`}
+              >
+                <h3 className="text-2xl font-serif font-bold text-navy mb-4">
+                  {card.title}
                 </h3>
-                <p className="text-gray text-base leading-relaxed">
-                  {t.aboutPage.different.item1Text}
-                </p>
+                <p className="text-gray text-lg leading-relaxed">{card.desc}</p>
               </div>
-            </div>
-
-            <div className="flex items-start gap-6">
-              <div className="flex-shrink-0 w-10 h-10 bg-coral rounded-full flex items-center justify-center text-white font-bold text-lg">
-                2
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-navy mb-3">
-                  {t.aboutPage.different.item2Title}
-                </h3>
-                <p className="text-gray text-base leading-relaxed">
-                  {t.aboutPage.different.item2Text}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-6">
-              <div className="flex-shrink-0 w-10 h-10 bg-mint rounded-full flex items-center justify-center text-navy font-bold text-lg">
-                3
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-navy mb-3">
-                  {t.aboutPage.different.item3Title}
-                </h3>
-                <p className="text-gray text-base leading-relaxed">
-                  {t.aboutPage.different.item3Text}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-6">
-              <div className="flex-shrink-0 w-10 h-10 bg-coral rounded-full flex items-center justify-center text-white font-bold text-lg">
-                4
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-navy mb-3">
-                  {t.aboutPage.different.item4Title}
-                </h3>
-                <p className="text-gray text-base leading-relaxed">
-                  {t.aboutPage.different.item4Text}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-8">
-            {t.aboutPage.cta.title}
-          </h2>
-          <p className="text-lg md:text-xl text-gray mb-12 max-w-2xl mx-auto leading-relaxed">
-            {t.aboutPage.cta.subtitle}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link to="/find-tutors">
-              <Button size="lg">{t.aboutPage.cta.studentButton}</Button>
-            </Link>
-            <Link to="/start-teaching">
-              <Button size="lg" variant="outline">
-                {t.aboutPage.cta.tutorButton}
-              </Button>
-            </Link>
+            ))}
           </div>
         </div>
       </section>
