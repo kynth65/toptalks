@@ -450,6 +450,7 @@ export const zh = {
   },
   startTeachingPage: {
     hero: {
+      badge: "加入我们的团队",
       title: "全球教学与启发",
       subtitle: "与全球学生分享您的专业知识。设置自己的时间表、费率和教学风格，同时产生有意义的影响。",
       feature1Title: "随时随地工作",

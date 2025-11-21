@@ -437,6 +437,7 @@ export const ko = {
   },
   startTeachingPage: {
     hero: {
+      badge: "우리 팀에 합류하세요",
       title: "전 세계에서 가르치고 영감을 주세요",
       subtitle: "전 세계 학생들과 전문 지식을 공유하세요. 의미 있는 영향을 미치면서 자신의 일정, 요금 및 교육 스타일을 설정하세요.",
       feature1Title: "어디서나 일하기",

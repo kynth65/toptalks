@@ -437,6 +437,7 @@ export const es = {
   },
   startTeachingPage: {
     hero: {
+      badge: "Únete a Nuestro Equipo",
       title: "Enseña e Inspira en Todo el Mundo",
       subtitle: "Comparte tu experiencia con estudiantes de todo el mundo. Establece tu propio horario, tarifas y estilo de enseñanza mientras generas un impacto significativo.",
       feature1Title: "Trabaja Desde Cualquier Lugar",

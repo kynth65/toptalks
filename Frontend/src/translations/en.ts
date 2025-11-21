@@ -437,6 +437,7 @@ export const en = {
   },
   startTeachingPage: {
     hero: {
+      badge: "Join Our Team",
       title: "Teach & Inspire Worldwide",
       subtitle: "Share your expertise with students around the globe. Set your own schedule, rates, and teaching style while making a meaningful impact.",
       feature1Title: "Work From Anywhere",
