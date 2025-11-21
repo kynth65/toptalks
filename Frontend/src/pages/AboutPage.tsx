@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import Button from "../components/common/Button";
+import { useLanguage } from "../contexts/LanguageContext";
 import aboutHero from "../assets/images/about.jpg";
 import about2 from "../assets/images/about-2.jpg";
 import about3 from "../assets/images/about-3.jpg";
 
 const AboutPage: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-cream font-sans selection:bg-coral selection:text-white">
       <Navbar />
@@ -19,19 +22,18 @@ const AboutPage: React.FC = () => {
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-navy/5 text-navy font-medium text-sm mb-8 shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-coral animate-pulse"></span>
-                Our Mission
+                {t.aboutPage.mission.missionTitle}
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-navy leading-[1.1] mb-6">
-                Connecting worlds through{" "}
-                <span className="text-coral italic">language.</span>
+                {t.aboutPage.hero.title1}
+                <span className="text-coral italic">{t.aboutPage.hero.title2}</span>
               </h1>
               <p className="text-xl text-gray leading-relaxed mb-8 max-w-lg">
-                We believe fluency is more than just vocabulary. It's about
-                connection, culture, and the confidence to speak up.
+                {t.aboutPage.hero.subtitle}
               </p>
               <Link to="/find-tutors">
                 <Button size="lg" variant="primary">
-                  Start Your Journey
+                  {t.aboutPage.cta.studentButton}
                 </Button>
               </Link>
             </div>
@@ -84,20 +86,11 @@ const AboutPage: React.FC = () => {
 
               <div className="lg:w-1/2 space-y-8">
                 <h2 className="text-3xl md:text-5xl font-serif font-bold text-navy leading-tight">
-                  From a classroom idea to a{" "}
-                  <span className="text-mint">global community.</span>
+                  {t.aboutPage.story.title}
                 </h2>
                 <div className="space-y-6 text-lg text-gray/90 leading-relaxed">
-                  <p>
-                    TopTalks started in 2023 with a simple question: Why is
-                    learning a language so lonely? We wanted to change that by
-                    putting human connection at the center of the experience.
-                  </p>
-                  <p>
-                    Today, we are a thriving network of learners and educators
-                    from 120+ countries, united by the belief that understanding
-                    each other is the first step to a better world.
-                  </p>
+                  <p>{t.aboutPage.story.paragraph1}</p>
+                  <p>{t.aboutPage.story.paragraph2}</p>
                 </div>
 
                 <div className="flex gap-12 pt-4">
@@ -106,7 +99,7 @@ const AboutPage: React.FC = () => {
                       10k+
                     </div>
                     <div className="text-sm text-gray font-medium uppercase tracking-wider mt-1">
-                      Students
+                      {t.aboutPage.stats.students}
                     </div>
                   </div>
                   <div>
@@ -114,7 +107,7 @@ const AboutPage: React.FC = () => {
                       120+
                     </div>
                     <div className="text-sm text-gray font-medium uppercase tracking-wider mt-1">
-                      Countries
+                      {t.aboutPage.stats.countries}
                     </div>
                   </div>
                 </div>
@@ -129,29 +122,28 @@ const AboutPage: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-navy mb-6">
-              What Drives Us
+              {t.aboutPage.mission.title}
             </h2>
             <p className="text-xl text-gray max-w-2xl mx-auto">
-              Our core values shape every lesson, every connection, and every
-              line of code.
+              {t.aboutPage.mission.missionText}
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {[
               {
-                title: "Quality First",
-                desc: "We rigorously vet every tutor to ensure you learn from the best.",
+                title: t.aboutPage.mission.quality,
+                desc: t.aboutPage.mission.qualityText,
                 color: "bg-white",
               },
               {
-                title: "Inclusivity",
-                desc: "Education is for everyone. We keep learning accessible and affordable.",
+                title: t.aboutPage.mission.accessibility,
+                desc: t.aboutPage.mission.accessibilityText,
                 color: "bg-white",
               },
               {
-                title: "Growth",
-                desc: "We celebrate every milestone, from your first word to fluency.",
+                title: t.aboutPage.mission.personalization,
+                desc: t.aboutPage.mission.personalizationText,
                 color: "bg-white",
               },
             ].map((card, idx) => (
