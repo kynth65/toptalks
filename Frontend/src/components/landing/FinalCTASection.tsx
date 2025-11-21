@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../common/Button";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 const FinalCTASection: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="py-32 px-4 sm:px-6 lg:px-8 bg-cream relative overflow-hidden">
       {/* Big text watermark in background */}
@@ -14,22 +17,20 @@ const FinalCTASection: React.FC = () => {
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <h2 className="text-4xl md:text-6xl font-serif font-bold text-navy mb-8 leading-tight">
-          Ready to master a{" "}
-          <span className="text-coral italic">new language?</span>
+          {t.finalCta.studentHeadline}
         </h2>
         <p className="text-xl text-gray mb-12 max-w-2xl mx-auto leading-relaxed">
-          Join thousands of students and tutors on TopTalks. Your journey to
-          fluency begins with a single lesson.
+          {t.finalCta.studentSubheading}
         </p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <Link to="/find-tutors">
             <Button size="lg" variant="primary">
-              Find Your Tutor
+              {t.finalCta.findTutor}
             </Button>
           </Link>
           <Link to="/start-teaching">
             <Button size="lg" variant="outline">
-              Become a Tutor
+              {t.finalCta.becomeTeacher}
             </Button>
           </Link>
         </div>
