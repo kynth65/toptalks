@@ -9,16 +9,16 @@ const Navbar: React.FC = () => {
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const languageDropdownRef = useRef<HTMLDivElement>(null);
-  const { language: selectedLanguage, setLanguage } = useLanguage();
+  const { language: selectedLanguage, setLanguage, t } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
 
   const navLinks = [
-    { name: "Home", path: "/", sectionId: null },
-    { name: "About", path: "/about", sectionId: null },
-    { name: "Find Tutor", path: "/find-tutors", sectionId: null },
-    { name: "Apply", path: "/start-teaching", sectionId: null },
-    { name: "Contact", path: "/contact", sectionId: "contact" },
+    { nameKey: "home", path: "/", sectionId: null },
+    { nameKey: "about", path: "/about", sectionId: null },
+    { nameKey: "findTutor", path: "/find-tutors", sectionId: null },
+    { nameKey: "apply", path: "/start-teaching", sectionId: null },
+    { nameKey: "contact", path: "/contact", sectionId: "contact" },
   ];
 
   const languages = [
@@ -116,12 +116,12 @@ const Navbar: React.FC = () => {
           <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
-                key={link.name}
+                key={link.nameKey}
                 href={link.sectionId ? `#${link.sectionId}` : link.path}
                 onClick={(e) => handleNavClick(e, link)}
                 className="text-navy/70 hover:text-navy transition-colors duration-200 text-sm font-medium cursor-pointer hover:underline decoration-mint decoration-2 underline-offset-4"
               >
-                {link.name}
+                {t.navbar[link.nameKey as keyof typeof t.navbar]}
               </a>
             ))}
 
@@ -179,7 +179,7 @@ const Navbar: React.FC = () => {
             {/* Login Button */}
             <Link to="/login">
               <Button size="sm" variant="primary">
-                Login
+                {t.navbar.login}
               </Button>
             </Link>
           </div>
@@ -213,12 +213,12 @@ const Navbar: React.FC = () => {
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <a
-                  key={link.name}
+                  key={link.nameKey}
                   href={link.sectionId ? `#${link.sectionId}` : link.path}
                   onClick={(e) => handleNavClick(e, link)}
                   className="text-navy hover:text-coral transition-colors duration-200 text-base font-medium py-2 border-b border-cream-dark"
                 >
-                  {link.name}
+                  {t.navbar[link.nameKey as keyof typeof t.navbar]}
                 </a>
               ))}
 
@@ -246,7 +246,7 @@ const Navbar: React.FC = () => {
 
               <Link to="/login" className="block pt-2">
                 <Button size="md" variant="primary" className="w-full">
-                  Login
+                  {t.navbar.login}
                 </Button>
               </Link>
             </div>
