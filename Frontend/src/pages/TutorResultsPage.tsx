@@ -207,6 +207,7 @@ const TutorResultsPage = () => {
     if (originalData) {
       setCurrentFilters(originalData);
       filterTutors(originalData);
+      setIsFilterOpen(false);
     }
   };
 
