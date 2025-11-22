@@ -521,7 +521,8 @@ export const zh = {
   navbar: {
     home: "首页",
     about: "关于",
-    pricing: "价格",
+    findTutor: "寻找导师",
+    apply: "申请",
     contact: "联系我们",
     login: "登录",
     startLearning: "开始学习"

@@ -508,7 +508,8 @@ export const es = {
   navbar: {
     home: "Inicio",
     about: "Acerca de",
-    pricing: "Precios",
+    findTutor: "Buscar Tutor",
+    apply: "Aplicar",
     contact: "Contacto",
     login: "Iniciar Sesión",
     startLearning: "Comenzar a Aprender"

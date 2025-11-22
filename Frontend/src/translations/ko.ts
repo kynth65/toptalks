@@ -508,7 +508,8 @@ export const ko = {
   navbar: {
     home: "홈",
     about: "소개",
-    pricing: "가격",
+    findTutor: "튜터 찾기",
+    apply: "신청하기",
     contact: "연락처",
     login: "로그인",
     startLearning: "학습 시작"

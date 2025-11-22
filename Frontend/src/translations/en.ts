@@ -508,7 +508,8 @@ export const en = {
   navbar: {
     home: "Home",
     about: "About",
-    pricing: "Pricing",
+    findTutor: "Find Tutor",
+    apply: "Apply",
     contact: "Contact",
     login: "Login",
     startLearning: "Start Learning"
